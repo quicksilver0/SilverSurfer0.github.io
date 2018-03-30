@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'Vladimir Kuzmenkov'
-SITENAME = "Vladimir's Blog"
+AUTHOR = 'Vladimir'
+SITENAME = "A jupyter Blog"
 SITEURL = ''
+THEME = 'E:\Pelican\pelican-themes\voidy-bootstrap'
 
 PATH = 'content'
 
@@ -37,5 +38,5 @@ DEFAULT_PAGINATION = 7
 
 MARKUP = ('md', 'ipynb')
 
-PLUGIN_PATH = './plugins'
+PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['ipynb.markup']
