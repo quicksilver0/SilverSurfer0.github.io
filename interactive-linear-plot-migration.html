@@ -1,51 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Interactive Linear Plot — A jupyter Blog</title>
-	<meta name="description" content="Title: Interactive Linear Plot; Date: 2017-09-04; Author: Vladimir Kuzmenkov">
-	<meta name="author" content="Vladimir">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src="http://SilverSurfer0.github.io/theme/html5.js"></script>
-		<![endif]-->
-	<link href="http://SilverSurfer0.github.io/theme/css/ipython.css" rel="stylesheet">
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
-	<link href="http://SilverSurfer0.github.io/theme/css/local.css" rel="stylesheet">
-	<link href="http://SilverSurfer0.github.io/theme/css/pygments.css" rel="stylesheet">
+  <title>Interactive Linear Plot - A jupyter Blog</title>
+  <meta charset='utf-8'/>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <meta rel='canonical' href='http://SilverSurfer0.github.io/interactive-linear-plot-migration.html'/>
+          <link href='http://SilverSurfer0.github.io/feeds/all.atom.xml' rel='alternate' type='application/atom+xml' title='A jupyter Blog Full Atom Feed'>
+          <link href='http://SilverSurfer0.github.io/feeds/portfolio.atom.xml' rel='alternate' type='application/atom+xml' title='A jupyter Blog Category Portfolio Atom Feed'>
+      <link rel='stylesheet' href='http://SilverSurfer0.github.io/theme/css/main.css'/>
 </head>
-<body>
-<div class="container">
-	<div class="page-header">
-		<h1><a href="http://SilverSurfer0.github.io/">A jupyter Blog</a>
-			<br>	</div>
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="text-center article-header">
-		<h1 itemprop="name headline" class="article-title">Interactive Linear Plot</h1>
-		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
-			<h4 itemprop="name">Vladimir Kuzmenkov</h4>
-		</span>
-		<time datetime="2017-09-04T22:05:00+03:00" itemprop="datePublished">Mon 04 September 2017</time>
-	</div>
-	<div>
-		Category:
-		<span itemprop="articleSection">
-			<a href="http://SilverSurfer0.github.io/category/portfolio.html" rel="category">Portfolio</a>
-		</span>
-	</div>
- 
-	<div>
-		Tags:
-		<span itemprop="keywords">
-			<a href="http://SilverSurfer0.github.io/tag/python-matplotlib.html" rel="tag">python matplotlib</a>
-		</span>
-	</div>
-	<div itemprop="articleBody" class="article-body"><style type="text/css">/*!
+
+<body itemscope itemtype='https://schema.org/WebPage' itemref='publisher-name publisher-description'>
+  <div id='header'>
+    <div class='handle'><span class='dots'></span></div>
+    <div class='content'>
+      <div itemscope itemtype='https://schema.org/Organization' itemid='http://SilverSurfer0.github.io'>
+        <header id='publisher'>
+          <h1><a itemprop='url' rel='home' href='http://SilverSurfer0.github.io'><span itemprop='name' id='publisher-name'>A jupyter Blog</span></a></h1>
+        </header>
+      </div>
+
+
+<nav itemscope itemtype='https://schema.org/SiteNavigationElement'>
+  <div class='container'>
+    <div class='handle'>(Pages)</div>
+    <div class='content'>
+        (<span itemprop='name'><a itemprop='url' href='http://SilverSurfer0.github.io/tags.html' >Tags</a></span>)
+        (<span itemprop='name'><a itemprop='url' href='http://SilverSurfer0.github.io/authors.html' >Authors</a></span>)
+        (<span itemprop='name'><a itemprop='url' href='http://SilverSurfer0.github.io/archives.html' >Archives</a></span>)
+    </div>
+  </div>
+
+    <div class='container' id='nav-categories-container'>
+      <div class='handle'>
+        {<span itemprop='name'><a itemprop='url' href='http://SilverSurfer0.github.io/categories.html'>Categories</a></span>}
+      </div>
+      <div class='content'>
+          <span itemprop='name' class='category'><a itemprop='url' href='http://SilverSurfer0.github.io/category/portfolio.html' class='active'>Portfolio</a></span>
+      </div>
+    </div>
+
+  <div class='container' id='nav-breadcrumb-container'>
+    <div class='handle'>&gt;</div>
+    <div class='content'>
+
+
+<div itemscope itemtype='https://schema.org/BreadcrumbList'>
+      <span itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+    <a itemprop='item' href='http://SilverSurfer0.github.io/interactive-linear-plot-migration.html'><span itemprop='name'>Interactive Linear Plot</span></a>
+    <meta itemprop='position' content='4'/>
+  </span>
+  &lt;
+
+      <span itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+    <a itemprop='item' href='http://SilverSurfer0.github.io/category/portfolio.html'><span itemprop='name'>Portfolio</span></a>
+    <meta itemprop='position' content='3'/>
+  </span>
+  &lt;
+
+      <span itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+    <a itemprop='item' href='http://SilverSurfer0.github.io/categories.html'><span itemprop='name'>Categories</span></a>
+    <meta itemprop='position' content='2'/>
+  </span>
+  &lt;
+
+    <span itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+    <meta itemprop='name' content='Home'/>
+    <span itemprop='item' itemscope itemtype='https://schema.org/Blog'>
+      <meta itemprop='name' content='A jupyter Blog'/>
+      <a itemprop='url' href='http://SilverSurfer0.github.io'>Home</a>
+    </span>
+    <meta itemprop='position' content='1'/>
+  </span>
+
+</div>
+
+<div itemscope itemtype='https://schema.org/BreadcrumbList'>
+      <span itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+    <a itemprop='item' href='http://SilverSurfer0.github.io/interactive-linear-plot-migration.html'><span itemprop='name'>Interactive Linear Plot</span></a>
+    <meta itemprop='position' content='5'/>
+  </span>
+  &lt;
+
+
+        04
+        &lt;
+        September
+        &lt;
+        2017
+        &lt;
+    <span itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+    <meta itemprop='name' content='Home'/>
+    <span itemprop='item' itemscope itemtype='https://schema.org/Blog'>
+      <meta itemprop='name' content='A jupyter Blog'/>
+      <a itemprop='url' href='http://SilverSurfer0.github.io'>Home</a>
+    </span>
+    <meta itemprop='position' content='1'/>
+  </span>
+
+</div>    </div>
+  </div>
+</nav>    </div>
+  </div>
+
+  <main>
+
+    <article itemprop='mainEntity' itemscope itemtype='https://schema.org/BlogPosting'>
+    <meta itemprop='headline' content='Interactive Linear Plot'/>
+    <link itemprop='publisher' itemscope itemtype='https://schema.org/Organization' itemref='publisher' href='http://SilverSurfer0.github.io'/>
+    <link itemprop='mainEntityOfPage' href='http://SilverSurfer0.github.io/interactive-linear-plot-migration.html'/>
+    <meta itemprop='inLanguage' content='en'/>
+      <meta itemprop='wordCount' content='7810'/>
+
+
+    <header>
+      <h2 itemprop='name'><a href='http://SilverSurfer0.github.io/interactive-linear-plot-migration.html'>Interactive Linear Plot</a></h2>
+      <p>
+        <time itemprop='datePublished' datetime='2017-09-04 22:05:00+03:00' title='2017-09-04 22:05:00+03:00'>Mon 04 September 2017</time>
+      </p>
+      <p class='author-cat-tag'>
+            <span itemprop='author' itemscope itemtype='https://schema.org/Person' class='author'>
+    <span itemprop='name' class='name'><a itemprop='url' rel='author' href='http://SilverSurfer0.github.io/author/vladimir-kuzmenkov.html'>Vladimir Kuzmenkov</a></span>
+  </span>
+
+
+          <span itemprop="articleSection" class='category'><a href='http://SilverSurfer0.github.io/category/portfolio.html'>Portfolio</a></span>
+
+
+            <span itemprop="keywords" class='tag'><a href='http://SilverSurfer0.github.io/tag/python-matplotlib.html'>python matplotlib</a></span>
+
+      </p>
+    </header>
+
+      <meta itemprop='description' content=''>
+      <div>
+        <style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -1886,10 +1974,10 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div id="26373585-47c3-4e06-8df6-709a01186819"></div>
+<div id="1f266da6-d995-44de-9582-36a528e168e7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#26373585-47c3-4e06-8df6-709a01186819');
+var element = $('#1f266da6-d995-44de-9582-36a528e168e7');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -2709,87 +2797,15 @@ if (IPython.notebook.kernel != null) {
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
-</div>
-	<hr>
-	<h2>Comments</h2>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'silversurfer0pelican'; 
-    var disqus_title = 'Interactive Linear Plot';
 
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-		</div>
-	</div> 	<!-- <hr> -->
-</div> <!-- /container -->
-<footer class="aw-footer bg-danger">
-	<div class="container"> <!-- footer -->
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row">
-					<div class="col-md-3">
-						<h4>Navigation</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="http://SilverSurfer0.github.io">A jupyter Blog</a></li>
-							<li><a href="http://SilverSurfer0.github.io/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h4>Author</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="#">You can add links in your config file</a></li>
-							<li><a href="#">Another social link</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h4>Categories</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="http://SilverSurfer0.github.io/category/portfolio.html">Portfolio (3)</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h4>Links</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="http://getpelican.com/">Pelican</a></li>
-							<li><a href="http://python.org/">Python.org</a></li>
-							<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-							<li><a href="#">You can modify those links in your config file</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center center-block aw-bottom">
-			<p>&copy; Vladimir 2016</p>
-			<p>Powered by Pelican</p>
-		</div>
-	</div>
-</div>
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-	$("div.collapseheader").click(function () {
-		$header = $(this).children("span").first();
-		$codearea = $(this).children(".input_area");
-		$codearea.slideToggle(500, function () {
-			$header.text(function () {
-				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
-			});
-		});
-	});
-});
-</script>
+      </div>
+  </article>
+
+  </main>
+
+
+  <footer>
+<!-- Proudly powered by Pelican which takes great advantage of Python, with Apricot theme (v0.1.0) by Yu-Jie Lin. -->
+
+  </footer>
 </body>
-</html>
