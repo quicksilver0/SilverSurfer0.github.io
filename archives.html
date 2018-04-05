@@ -1,61 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>A jupyter Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/theme/styles.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="/theme/slicknav.css">
-    <script src="/theme/jquery.slicknav.min.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <script type="text/javascript"
-	    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
-    <![endif]-->
-<script>
-	$(function(){
-		$('#menu').slicknav({'label':''});
+<head>
+	<meta charset="utf-8">
+	<title>Archive — A jupyter Blog</title>
+	<meta name="description" content="The archives page, find old stuff organized by date.">
+	<meta name="author" content="Vladimir">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://SilverSurfer0.github.io/theme/html5.js"></script>
+		<![endif]-->
+	<link href="http://SilverSurfer0.github.io/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="http://SilverSurfer0.github.io/theme/css/local.css" rel="stylesheet">
+	<link href="http://SilverSurfer0.github.io/theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1><a href="http://SilverSurfer0.github.io/">A jupyter Blog</a>
+			<br>	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+
+<h1>Archives</h1>
+
+<table class="table">
+    <tbody>
+        <tr>
+        <td>05 Apr 2018</td>
+        <td><a href='http://SilverSurfer0.github.io/apost.html'>Just a post</a></td>
+        </tr>
+        <tr>
+        <td>04 Sep 2017</td>
+        <td><a href='http://SilverSurfer0.github.io/interactive-linear-plot-migration.html'>Interactive Linear Plot</a></td>
+        </tr>
+        <tr>
+        <td>04 Sep 2017</td>
+        <td><a href='http://SilverSurfer0.github.io/interactive-barchart.html'>Interactive Barchart</a></td>
+        </tr>
+    </tbody>
+</table>
+
+
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-3">
+						<h4>Navigation</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://SilverSurfer0.github.io">A jupyter Blog</a></li>
+							<li><a href="http://SilverSurfer0.github.io/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Author</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="#">You can add links in your config file</a></li>
+							<li><a href="#">Another social link</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Categories</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://SilverSurfer0.github.io/category/portfolio.html">Portfolio (3)</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Links</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://getpelican.com/">Pelican</a></li>
+							<li><a href="http://python.org/">Python.org</a></li>
+							<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+							<li><a href="#">You can modify those links in your config file</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center center-block aw-bottom">
+			<p>&copy; Vladimir 2016</p>
+			<p>Powered by Pelican</p>
+		</div>
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
 	});
+});
 </script>
-<link rel="icon" href="/theme/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
-<link rel="apple-touch-icon" sizes="114x114" href="/theme/apple-touch-icon-precomposed.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/theme/favicon152.png">
-<link rel="apple-touch-icon" sizes="196x196" href="/theme/favicon196.png">
-  </head>
-
-  <body>
-    <div id="wrapper">
-
-      <header>
-	<nav class="byline"><ul id="menu">
-        </ul></nav><!-- /#menu -->
-        <div class="downloads">
-          <a href="#" class="fa fa-You can add links in your config file"></a>
-          <a href="#" class="fa fa-Another social link"></a>
-        </div>
-      </header>
-<section>
-<h1>Archives for A jupyter Blog</h1>
-
-<dl>
-    <dt>Thu 05 April 2018</dt>
-    <dd><a href="http://SilverSurfer0.github.io/apost.html">Just a post</a></dd>
-    <dt>Mon 04 September 2017</dt>
-    <dd><a href="http://SilverSurfer0.github.io/interactive-linear-plot-migration.html">Interactive Linear Plot</a></dd>
-    <dt>Mon 04 September 2017</dt>
-    <dd><a href="http://SilverSurfer0.github.io/interactive-barchart.html">Interactive Barchart</a></dd>
-</dl>
-</section>
-      <footer>
-	  <a href="http://SilverSurfer0.github.io/pages/about.html" >About</a>
-	  <div class="right-footer">
-	  <a href="http://SilverSurfer0.github.io/categories.html" >Categories</a>
-	  <a href="http://SilverSurfer0.github.io/tags.html" >Tags</a>
-	  </div>
-      </footer>
 </body>
 </html>
