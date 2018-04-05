@@ -1176,9 +1176,9 @@ h6:hover .anchor-link {
 
 <span class="c1">#Set colors using only 3 values: blue, white, red</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bar</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bars</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">value_of_interest</span> <span class="o">></span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">value_of_interest</span> <span class="o">&gt;</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
         <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#005999'</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o"><</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+    <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&lt;</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
         <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#ae0001'</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span> <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#f8f8ff'</span><span class="p">)</span>
 
@@ -1215,10 +1215,10 @@ h6:hover .anchor-link {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div id="09e570ac-02d8-41aa-bc8f-4766efbbd410"></div>
+<div id="971e8106-b7b5-4641-b670-1db93f12c2a1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#09e570ac-02d8-41aa-bc8f-4766efbbd410');
+var element = $('#971e8106-b7b5-4641-b670-1db93f12c2a1');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -2013,15 +2013,15 @@ if (IPython.notebook.kernel != null) {
 
 <span class="c1">#Set colors of the bars based on the user specified value difference from the mean. Using color scales.</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bar</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bars</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">value_of_interest</span> <span class="o">>=</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">value_of_interest</span> <span class="o">&gt;=</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
         <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#699AE1'</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o"><</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+    <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&lt;</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
         <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#CC0014'</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o"><</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+    <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&lt;</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
         <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
         <span class="n">digitized</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">value_of_interest</span><span class="p">,</span><span class="n">bins</span><span class="p">)</span>
         <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="n">color_scale_white_red</span><span class="p">[</span><span class="n">digitized</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-    <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">>=</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+    <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&gt;=</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
         <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
         <span class="n">digitized</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">value_of_interest</span><span class="p">,</span><span class="n">bins</span><span class="p">)</span>
         <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="n">color_scale_white_blue</span><span class="p">[</span><span class="n">digitized</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -2051,15 +2051,15 @@ if (IPython.notebook.kernel != null) {
     <span class="n">ann_text</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xmin</span><span class="o">+</span><span class="n">xmax</span><span class="o">*</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">ymax</span><span class="o">*</span><span class="mf">0.9</span><span class="p">,</span> <span class="s1">'Var='</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">value_of_interest</span><span class="p">),</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#B74500'</span><span class="p">)</span>
     
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bar</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bars</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">value_of_interest</span> <span class="o">>=</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">value_of_interest</span> <span class="o">&gt;=</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
             <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#699AE1'</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o"><</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&lt;</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
             <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#CC0014'</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o"><</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&lt;</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
             <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
             <span class="n">digitized</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">value_of_interest</span><span class="p">,</span><span class="n">bins</span><span class="p">)</span>
             <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="n">color_scale_white_red</span><span class="p">[</span><span class="n">digitized</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-        <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">>=</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&gt;=</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
             <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
             <span class="n">digitized</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">value_of_interest</span><span class="p">,</span><span class="n">bins</span><span class="p">)</span>
             <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="n">color_scale_white_blue</span><span class="p">[</span><span class="n">digitized</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -2114,6 +2114,19 @@ if (IPython.notebook.kernel != null) {
   </div>
   
 
+  <div class="comments">
+	<h2>Comments</h2>
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+				   (function() {
+						var dsq = document.createElement('script');
+						dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//silversurfer0pelican.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] ||
+						 document.getElementsByTagName('body')[0]).appendChild(dsq);
+				  })();
+	</script>
+  </div>
 </article>
         </div><!-- /content -->
 
@@ -2133,6 +2146,16 @@ if (IPython.notebook.kernel != null) {
       </address><!-- /colophon  -->
     </footer>
 
+<!-- DISQUS script for displaying comment count -->
+<script type="text/javascript">
+    var disqus_shortname = 'silversurfer0pelican';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 
     <!-- javascript -->
    

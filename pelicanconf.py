@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = 'Vladimir'
 SITENAME = "A jupyter Blog"
 SITEURL = ''
+THEME = 'E:\Pelican\pelican-themes\\voidy-bootstrap'
 
 PATH = 'content'
 
