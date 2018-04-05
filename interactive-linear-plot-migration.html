@@ -1,101 +1,62 @@
-<!doctype html>
-<html class="no-js" lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>A jupyter Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/theme/styles.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/theme/slicknav.css">
+    <script src="/theme/jquery.slicknav.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript"
+	    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    <![endif]-->
+<script>
+	$(function(){
+		$('#menu').slicknav({'label':''});
+	});
+</script>
+<link rel="icon" href="/theme/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+<link rel="apple-touch-icon" sizes="114x114" href="/theme/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/theme/favicon152.png">
+<link rel="apple-touch-icon" sizes="196x196" href="/theme/favicon196.png">
+  </head>
 
-		<title>A jupyter Blog</title>
-		<meta name="description" content="">
-		<meta name="author" content="Vladimir">
+  <body>
+    <div id="wrapper">
 
-		<link rel="stylesheet" href="http://SilverSurfer0.github.io/theme/css/foundation.css" />
-		<link rel="stylesheet" href="http://SilverSurfer0.github.io/theme/css/pygment/monokai.css" />
-		<link rel="stylesheet" href="http://SilverSurfer0.github.io/theme/css/custom.css" />
-
-
-		<script src="http://SilverSurfer0.github.io/theme/js/modernizr.js"></script>
-
-		<!-- Feeds -->
-		<link href="http://SilverSurfer0.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A jupyter Blog Atom Feed" />
-
-
-		<!-- mathjax config similar to math.stackexchange -->
-		<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			jax: ["input/TeX", "output/HTML-CSS"],
-			tex2jax: {
-				inlineMath: [ ['$', '$'] ],
-				displayMath: [ ['$$', '$$']],
-				processEscapes: true,
-				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-			},
-			messageStyle: "none",
-			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
-		});
-		</script>
-		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-	</head>
-	<body>
-		<div class="off-canvas-wrap">
-			<div class="inner-wrap">
-				<!-- mobile top bar to activate nav -->
-				<nav class="tab-bar show-for-small">
-					<section class="left-small">
-						<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-					</section>
-
-					<section class="middle tab-bar-section">
-						<h1 class="title">A&nbsp;jupyter&nbsp;Blog</h1>
-					</section>
-				</nav>
-
-				<!-- mobile side bar nav -->
-				<aside class="left-off-canvas-menu">
-					<ul class="off-canvas-list">
-						<li><a href="http://SilverSurfer0.github.io">Home</a></li>
-						<li><label>Categories</label></li>
-							<li class="active"><a href="http://SilverSurfer0.github.io/category/portfolio.html">Portfolio</a></li>
-
-						<li><label>Links</label></li>
-							<li><a href="http://getpelican.com/">Pelican</a></li>
-							<li><a href="http://python.org/">Python.org</a></li>
-							<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-							<li><a href="#">You can modify those links in your config file</a></li>
+      <header>
+	<nav class="byline"><ul id="menu">
+        </ul></nav><!-- /#menu -->
+        <div class="downloads">
+          <a href="#" class="fa fa-You can add links in your config file"></a>
+          <a href="#" class="fa fa-Another social link"></a>
+        </div>
+        <hgroup>
+          <h1>Interactive Linear Plot</h1>
+  <footer class="article-footer">
+    <address class="vcard author">
+      By           <a class="url fn" href="http://SilverSurfer0.github.io/author/vladimir-kuzmenkov.html">Vladimir Kuzmenkov</a>
+    </address>
+    <abbr class="published" title="2017-09-04T22:05:00+03:00">
+       on 04.09.2017
+    </abbr>
+  </footer><!-- /.post-info -->
+        </hgroup>
+  
 
 
+    <meta name="tags" contents="python matplotlib" />
 
-						<li><label>Social</label></li>
-							<li><a href="#">Another social link</a></li>
-							<li><a href="#">You can add links in your config file</a></li>
-					</ul>	
-				</aside>
-
-				<!-- top bar nav -->
-				<nav class="top-bar hide-for-small-only" data-topbar>
-					<ul class="title-area">
-						<li class="name">
-							<h1><a href="http://SilverSurfer0.github.io/">A jupyter Blog</a></h1>
-						</li>
-					</ul>
-
-					<section class="top-bar-section">
-						<ul class="left">
-								<li class="active"><a href="http://SilverSurfer0.github.io/category/portfolio.html">Portfolio</a></li>
-						</ul>
-                        <ul class="right">                                                                                                                                           
-                                                                                                                                             
-                        </ul>  
-					</section>
-				</nav>
-
-				<!-- Main Page Content and Sidebar -->
-				<section class="main-section">
-					<div class="row">
-						<!-- Main Content -->
-						<div class="medium-9 small-12 columns" role="content">
-<article>
-	<h2>Interactive Linear Plot</h2>
-	<style type="text/css">/*!
+      </header>
+<section id="content" class="body article">
+  <div class="entry-content">
+    <style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -1936,10 +1897,10 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div id="18f65e1e-17f5-44c5-bc37-e2dc6c3cbf06"></div>
+<div id="a3a3886a-2ad4-4119-8076-86bcb906b0fa"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#18f65e1e-17f5-44c5-bc37-e2dc6c3cbf06');
+var element = $('#a3a3886a-2ad4-4119-8076-86bcb906b0fa');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -2760,76 +2721,43 @@ if (IPython.notebook.kernel != null) {
 }
 </script>
 
-	<hr/>
-	<h6>Written by <a href="http://SilverSurfer0.github.io/author/vladimir-kuzmenkov.html">Vladimir Kuzmenkov</a> in <a href="http://SilverSurfer0.github.io/category/portfolio.html">Portfolio</a> on Mon 04 September 2017. Tags: <a href="http://SilverSurfer0.github.io/tag/python-matplotlib.html">python matplotlib</a>, </h6>
-</article>
-
-<hr/>
-<div class="row">
-	<div class="small-12 columns">
-		<h3>Comments</h3>
-		<div id="disqus_thread"></div>
-		<script type="text/javascript">
-			var disqus_shortname = 'silversurfer0pelican';
-			(function() {
-				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-				dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-			})();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-	</div>
+  </div><!-- /.entry-content -->
+  <div class="article-share-tags">
+  <div class="end-article-tags">
+      <i class="fa fa-tag"></i>
+      <a href="http://SilverSurfer0.github.io/tag/python-matplotlib.html">python matplotlib</a>
+  </div>
+  <div class='article-share'>
+      share -
+  </div>
+  </div>
+</section>
+<div class="neighbors">
 </div>
-						</div>
-						<!-- End Main Content -->
-						<!-- Sidebar -->
-						<aside class="medium-3 hide-for-small-only columns">
-							<div class="panel">
-								<h5>Links</h5>
-								<ul class="side-nav">
-									<li><a href="http://getpelican.com/">Pelican</a></li>
-									<li><a href="http://python.org/">Python.org</a></li>
-									<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-									<li><a href="#">You can modify those links in your config file</a></li>
-								</ul>
-							</div>
-
-							<div class="panel">
-								<h5>Tags</h5>
-								<ul class="tag-cloud">
-								</ul>
-							</div>
+<section>
+	<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'silversurfer0pelican'; // required: replace example with your forum shortname
+        var disqus_identifier = 'interactive-linear-plot-migration.html';
+        var disqus_url = 'http://SilverSurfer0.github.io/interactive-linear-plot-migration.html';
 
 
-							<div class="panel">
-								<h5>Social</h5>
-								<ul class="side-nav">
-									<li><a href="#">Another social link</a></li>
-									<li><a href="#">You can add links in your config file</a></li>
-								</ul>
-							</div>
-						</aside>
-						<!-- End Sidebar -->
-					</div>
-
-					<!-- Footer -->
-					<footer class="row">
-						<div class="medium-9 small-12">
-							<hr/>
-							<p class="text-center">Powered by <a href="http://getpelican.com">Pelican</a> and <a href="http://foundation.zurb.com/">Zurb Foundation</a>. Theme by <a href="http://hamaluik.com">Kenton Hamaluik</a>.</p>
-						</div>
-					</footer>
-					<!-- End Footer -->
-				</section>
-				<a class="exit-off-canvas"></a>
-			</div><!--off-canvas inner-->
-		</div><!--off-canvas wrap-->
-
-		<script src="http://SilverSurfer0.github.io/theme/js/jquery.js"></script>
-		<script src="http://SilverSurfer0.github.io/theme/js/foundation.min.js"></script>
-		<script>
-			$(document).foundation();
-		</script>
-	</body>
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+      <footer>
+	  <a href="http://SilverSurfer0.github.io/pages/about.html" >About</a>
+	  <div class="right-footer">
+	  <a href="http://SilverSurfer0.github.io/categories.html" >Categories</a>
+	  <a href="http://SilverSurfer0.github.io/tags.html" >Tags</a>
+	  </div>
+      </footer>
+</body>
 </html>

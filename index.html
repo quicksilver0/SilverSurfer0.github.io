@@ -1,185 +1,107 @@
-<!doctype html>
-<html class="no-js" lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>A jupyter Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/theme/styles.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/theme/slicknav.css">
+    <script src="/theme/jquery.slicknav.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript"
+	    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    <![endif]-->
+<script>
+	$(function(){
+		$('#menu').slicknav({'label':''});
+	});
+</script>
+<link rel="icon" href="/theme/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+<link rel="apple-touch-icon" sizes="114x114" href="/theme/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/theme/favicon152.png">
+<link rel="apple-touch-icon" sizes="196x196" href="/theme/favicon196.png">
+  </head>
 
-		<title>A jupyter Blog</title>
-		<meta name="description" content="">
-		<meta name="author" content="Vladimir">
+  <body>
+    <div id="wrapper">
 
-		<link rel="stylesheet" href="http://SilverSurfer0.github.io/theme/css/foundation.css" />
-		<link rel="stylesheet" href="http://SilverSurfer0.github.io/theme/css/pygment/monokai.css" />
-		<link rel="stylesheet" href="http://SilverSurfer0.github.io/theme/css/custom.css" />
-
-
-		<script src="http://SilverSurfer0.github.io/theme/js/modernizr.js"></script>
-
-		<!-- Feeds -->
-		<link href="http://SilverSurfer0.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A jupyter Blog Atom Feed" />
-
-
-		<!-- mathjax config similar to math.stackexchange -->
-		<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			jax: ["input/TeX", "output/HTML-CSS"],
-			tex2jax: {
-				inlineMath: [ ['$', '$'] ],
-				displayMath: [ ['$$', '$$']],
-				processEscapes: true,
-				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-			},
-			messageStyle: "none",
-			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
-		});
-		</script>
-		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-	</head>
-	<body>
-		<div class="off-canvas-wrap">
-			<div class="inner-wrap">
-				<!-- mobile top bar to activate nav -->
-				<nav class="tab-bar show-for-small">
-					<section class="left-small">
-						<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-					</section>
-
-					<section class="middle tab-bar-section">
-						<h1 class="title">A&nbsp;jupyter&nbsp;Blog</h1>
-					</section>
-				</nav>
-
-				<!-- mobile side bar nav -->
-				<aside class="left-off-canvas-menu">
-					<ul class="off-canvas-list">
-						<li><a href="http://SilverSurfer0.github.io">Home</a></li>
-						<li><label>Categories</label></li>
-							<li ><a href="http://SilverSurfer0.github.io/category/portfolio.html">Portfolio</a></li>
-
-						<li><label>Links</label></li>
-							<li><a href="http://getpelican.com/">Pelican</a></li>
-							<li><a href="http://python.org/">Python.org</a></li>
-							<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-							<li><a href="#">You can modify those links in your config file</a></li>
-
-
-
-						<li><label>Social</label></li>
-							<li><a href="#">Another social link</a></li>
-							<li><a href="#">You can add links in your config file</a></li>
-					</ul>	
-				</aside>
-
-				<!-- top bar nav -->
-				<nav class="top-bar hide-for-small-only" data-topbar>
-					<ul class="title-area">
-						<li class="name">
-							<h1><a href="http://SilverSurfer0.github.io/">A jupyter Blog</a></h1>
-						</li>
-					</ul>
-
-					<section class="top-bar-section">
-						<ul class="left">
-								<li ><a href="http://SilverSurfer0.github.io/category/portfolio.html">Portfolio</a></li>
-						</ul>
-                        <ul class="right">                                                                                                                                           
-                                                                                                                                             
-                        </ul>  
-					</section>
-				</nav>
-
-				<!-- Main Page Content and Sidebar -->
-				<section class="main-section">
-					<div class="row">
-						<!-- Main Content -->
-						<div class="medium-9 small-12 columns" role="content">
-
-<article>
-	<h3><a href="http://SilverSurfer0.github.io/apost.html">Just a post</a></h3>
-	<h6>Written by <a href="http://SilverSurfer0.github.io/author/vladimir-kuzmenkov.html">Vladimir Kuzmenkov</a> in <a href="http://SilverSurfer0.github.io/category/portfolio.html">Portfolio</a> on Thu 05 April 2018. Tags: <a href="http://SilverSurfer0.github.io/tag/python-matplotlib.html">python matplotlib</a>, </h6>
-	
+      <header>
+	<nav class="byline"><ul id="menu">
+        </ul></nav><!-- /#menu -->
+        <div class="downloads">
+          <a href="#" class="fa fa-You can add links in your config file"></a>
+          <a href="#" class="fa fa-Another social link"></a>
+        </div>
+        <hgroup>
+          <h1>A jupyter Blog</h1>
+          <h2 class="tagline"></h2>
+        </hgroup>
+      </header>
+<section id="content">
+<ul id="post-list">
+        <li><article class="hentry">
+            <header class="article-list"> <h2 class="entry-title"><a href="http://SilverSurfer0.github.io/apost.html" rel="bookmark" title="link to Just a post">Just a post</a></h2>
+                <footer class="post-info">
+                    <address class="vcard author">By
+                        <a class="url fn" href="http://SilverSurfer0.github.io/author/vladimir-kuzmenkov.html">Vladimir Kuzmenkov</a>
+                    </address>
+                    <abbr class="published" title="2018-04-05T18:00:00+03:00">  on 05.04.2018 </abbr>
+                </footer><!-- /.post-info -->
+	    </header>
+                <div class="entry-content"> 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="A-post-to-see">A post to see<a class="anchor-link" href="#A-post-to-see">¶</a></h3><hr />
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis urna elit. Vestibulum aliquam in nulla at volutpat. Etiam eu mi quis sapien scelerisque iaculis. Ut rhoncus mollis est. Maecenas semper nibh id velit pretium, quis laoreet neque luctus. Etiam lacinia vulputate velit, eu tristique nulla tempor ut. Praesent luctus lobortis ex at dapibus. Praesent ac velit a magna maximus gravida. Cras et ligula in nisi aliquam ullamcorper. Fusce consequat laoreet purus ut pretium.</p>
-		<p class="continue"><a href="http://SilverSurfer0.github.io/apost.html">Continue reading &raquo;</a></p>
-</article>
-<hr />
-<article>
-	<h3><a href="http://SilverSurfer0.github.io/interactive-linear-plot-migration.html">Interactive Linear Plot</a></h3>
-	<h6>Written by <a href="http://SilverSurfer0.github.io/author/vladimir-kuzmenkov.html">Vladimir Kuzmenkov</a> in <a href="http://SilverSurfer0.github.io/category/portfolio.html">Portfolio</a> on Mon 04 September 2017. Tags: <a href="http://SilverSurfer0.github.io/tag/python-matplotlib.html">python matplotlib</a>, </h6>
-	
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis urna elit. Vestibulum aliquam in nulla at volutpat. Etiam eu mi quis sapien scelerisque iaculis. Ut rhoncus mollis est. Maecenas semper nibh id velit pretium, quis laoreet neque luctus. Etiam lacinia vulputate velit, eu tristique nulla tempor ut. Praesent luctus lobortis ex at dapibus. Praesent ac velit a magna maximus gravida. Cras et ligula in nisi aliquam ullamcorper. Fusce consequat laoreet purus ut pretium.</p> </div><!-- /.entry-content -->
+        </article></li>
+        <li><article class="hentry">
+            <header class="article-list"> <h2 class="entry-title"><a href="http://SilverSurfer0.github.io/interactive-linear-plot-migration.html" rel="bookmark" title="link to Interactive Linear Plot">Interactive Linear Plot</a></h2>
+                <footer class="post-info">
+                    <address class="vcard author">By
+                        <a class="url fn" href="http://SilverSurfer0.github.io/author/vladimir-kuzmenkov.html">Vladimir Kuzmenkov</a>
+                    </address>
+                    <abbr class="published" title="2017-09-04T22:05:00+03:00">  on 04.09.2017 </abbr>
+                </footer><!-- /.post-info -->
+	    </header>
+                <div class="entry-content"> 
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-		<p class="continue"><a href="http://SilverSurfer0.github.io/interactive-linear-plot-migration.html">Continue reading &raquo;</a></p>
-</article>
-<hr />
-<article>
-	<h3><a href="http://SilverSurfer0.github.io/interactive-barchart.html">Interactive Barchart</a></h3>
-	<h6>Written by <a href="http://SilverSurfer0.github.io/author/vladimir-kuzmenkov.html">Vladimir Kuzmenkov</a> in <a href="http://SilverSurfer0.github.io/category/portfolio.html">Portfolio</a> on Mon 04 September 2017. Tags: <a href="http://SilverSurfer0.github.io/tag/python-matplotlib.html">python matplotlib</a>, </h6>
-	
+<div class="input"> </div><!-- /.entry-content -->
+        </article></li>
+        <li><article class="hentry">
+            <header class="article-list"> <h2 class="entry-title"><a href="http://SilverSurfer0.github.io/interactive-barchart.html" rel="bookmark" title="link to Interactive Barchart">Interactive Barchart</a></h2>
+                <footer class="post-info">
+                    <address class="vcard author">By
+                        <a class="url fn" href="http://SilverSurfer0.github.io/author/vladimir-kuzmenkov.html">Vladimir Kuzmenkov</a>
+                    </address>
+                    <abbr class="published" title="2017-09-04T22:00:00+03:00">  on 04.09.2017 </abbr>
+                </footer><!-- /.post-info -->
+	    </header>
+                <div class="entry-content"> 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Custom-Visualization">Custom Visualization<a class="anchor-link" href="#Custom-Visualization">¶</a></h3><hr />
-<p>In this <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/Ferreira_Fisher_Sample_Oriented_Tasks.pdf">paper</a> the authors describe the challenges users face when trying to make judgements about probabilistic data generated through samples. As an example, they look at a bar chart of four years of data (replicated below in Figure 1). Each year has a y-axis value, which is derived from a sample of a larger dataset. For instance, the first value might be the number votes in a given district or riding for 1992, with the average being around 33,000. On top of this is plotted the 95% confidence interval for the mean (see the boxplot lectures for more information, and the yerr parameter of barcharts).</p>
-		<p class="continue"><a href="http://SilverSurfer0.github.io/interactive-barchart.html">Continue reading &raquo;</a></p>
-</article>
-<hr />
-
-
-						</div>
-						<!-- End Main Content -->
-						<!-- Sidebar -->
-						<aside class="medium-3 hide-for-small-only columns">
-							<div class="panel">
-								<h5>Links</h5>
-								<ul class="side-nav">
-									<li><a href="http://getpelican.com/">Pelican</a></li>
-									<li><a href="http://python.org/">Python.org</a></li>
-									<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-									<li><a href="#">You can modify those links in your config file</a></li>
-								</ul>
-							</div>
-
-							<div class="panel">
-								<h5>Tags</h5>
-								<ul class="tag-cloud">
-								</ul>
-							</div>
-
-
-							<div class="panel">
-								<h5>Social</h5>
-								<ul class="side-nav">
-									<li><a href="#">Another social link</a></li>
-									<li><a href="#">You can add links in your config file</a></li>
-								</ul>
-							</div>
-						</aside>
-						<!-- End Sidebar -->
-					</div>
-
-					<!-- Footer -->
-					<footer class="row">
-						<div class="medium-9 small-12">
-							<hr/>
-							<p class="text-center">Powered by <a href="http://getpelican.com">Pelican</a> and <a href="http://foundation.zurb.com/">Zurb Foundation</a>. Theme by <a href="http://hamaluik.com">Kenton Hamaluik</a>.</p>
-						</div>
-					</footer>
-					<!-- End Footer -->
-				</section>
-				<a class="exit-off-canvas"></a>
-			</div><!--off-canvas inner-->
-		</div><!--off-canvas wrap-->
-
-		<script src="http://SilverSurfer0.github.io/theme/js/jquery.js"></script>
-		<script src="http://SilverSurfer0.github.io/theme/js/foundation.min.js"></script>
-		<script>
-			$(document).foundation();
-		</script>
-	</body>
+<p>In this <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/Ferreira_Fisher_Sample_Oriented_Tasks.pdf">paper</a> the authors describe the challenges users face when trying to make judgements about probabilistic data generated through samples. As an example, they look at a bar chart of four years of data (replicated below in Figure 1). Each year has a y-axis value, which is derived from a sample of a larger dataset. For instance, the first value might be the number votes in a given district or riding for 1992, with the average being around 33,000. On top of this is plotted the 95% confidence interval for the mean (see the boxplot lectures for more information, and the yerr parameter of barcharts).</p> </div><!-- /.entry-content -->
+        </article></li>
+</ul><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 1
+</p>
+</section><!-- /#content -->
+      <footer>
+	  <a href="http://SilverSurfer0.github.io/pages/about.html" >About</a>
+	  <div class="right-footer">
+	  <a href="http://SilverSurfer0.github.io/categories.html" >Categories</a>
+	  <a href="http://SilverSurfer0.github.io/tags.html" >Tags</a>
+	  </div>
+      </footer>
+</body>
 </html>

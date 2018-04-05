@@ -1,151 +1,53 @@
-<!doctype html>
-<html class="no-js" lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>A jupyter Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/theme/styles.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/theme/slicknav.css">
+    <script src="/theme/jquery.slicknav.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript"
+	    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    <![endif]-->
+<script>
+	$(function(){
+		$('#menu').slicknav({'label':''});
+	});
+</script>
+<link rel="icon" href="/theme/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+<link rel="apple-touch-icon" sizes="114x114" href="/theme/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/theme/favicon152.png">
+<link rel="apple-touch-icon" sizes="196x196" href="/theme/favicon196.png">
+  </head>
 
-		<title>A jupyter Blog</title>
-		<meta name="description" content="">
-		<meta name="author" content="Vladimir">
+  <body>
+    <div id="wrapper">
 
-		<link rel="stylesheet" href="http://SilverSurfer0.github.io/theme/css/foundation.css" />
-		<link rel="stylesheet" href="http://SilverSurfer0.github.io/theme/css/pygment/monokai.css" />
-		<link rel="stylesheet" href="http://SilverSurfer0.github.io/theme/css/custom.css" />
-
-
-		<script src="http://SilverSurfer0.github.io/theme/js/modernizr.js"></script>
-
-		<!-- Feeds -->
-		<link href="http://SilverSurfer0.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A jupyter Blog Atom Feed" />
-
-
-		<!-- mathjax config similar to math.stackexchange -->
-		<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			jax: ["input/TeX", "output/HTML-CSS"],
-			tex2jax: {
-				inlineMath: [ ['$', '$'] ],
-				displayMath: [ ['$$', '$$']],
-				processEscapes: true,
-				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-			},
-			messageStyle: "none",
-			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
-		});
-		</script>
-		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-	</head>
-	<body>
-		<div class="off-canvas-wrap">
-			<div class="inner-wrap">
-				<!-- mobile top bar to activate nav -->
-				<nav class="tab-bar show-for-small">
-					<section class="left-small">
-						<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-					</section>
-
-					<section class="middle tab-bar-section">
-						<h1 class="title">A&nbsp;jupyter&nbsp;Blog</h1>
-					</section>
-				</nav>
-
-				<!-- mobile side bar nav -->
-				<aside class="left-off-canvas-menu">
-					<ul class="off-canvas-list">
-						<li><a href="http://SilverSurfer0.github.io">Home</a></li>
-						<li><label>Categories</label></li>
-							<li ><a href="http://SilverSurfer0.github.io/category/portfolio.html">Portfolio</a></li>
-
-						<li><label>Links</label></li>
-							<li><a href="http://getpelican.com/">Pelican</a></li>
-							<li><a href="http://python.org/">Python.org</a></li>
-							<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-							<li><a href="#">You can modify those links in your config file</a></li>
-
-
-
-						<li><label>Social</label></li>
-							<li><a href="#">Another social link</a></li>
-							<li><a href="#">You can add links in your config file</a></li>
-					</ul>	
-				</aside>
-
-				<!-- top bar nav -->
-				<nav class="top-bar hide-for-small-only" data-topbar>
-					<ul class="title-area">
-						<li class="name">
-							<h1><a href="http://SilverSurfer0.github.io/">A jupyter Blog</a></h1>
-						</li>
-					</ul>
-
-					<section class="top-bar-section">
-						<ul class="left">
-								<li ><a href="http://SilverSurfer0.github.io/category/portfolio.html">Portfolio</a></li>
-						</ul>
-                        <ul class="right">                                                                                                                                           
-                                                                                                                                             
-                        </ul>  
-					</section>
-				</nav>
-
-				<!-- Main Page Content and Sidebar -->
-				<section class="main-section">
-					<div class="row">
-						<!-- Main Content -->
-						<div class="medium-9 small-12 columns" role="content">
+      <header>
+	<nav class="byline"><ul id="menu">
+        </ul></nav><!-- /#menu -->
+        <div class="downloads">
+          <a href="#" class="fa fa-You can add links in your config file"></a>
+          <a href="#" class="fa fa-Another social link"></a>
+        </div>
+      </header>
     <h1>Authors on A jupyter Blog</h1>
 
     <ul>        <li><a href="http://SilverSurfer0.github.io/author/vladimir-kuzmenkov.html">Vladimir Kuzmenkov</a> (3)</li>
     </ul>
-						</div>
-						<!-- End Main Content -->
-						<!-- Sidebar -->
-						<aside class="medium-3 hide-for-small-only columns">
-							<div class="panel">
-								<h5>Links</h5>
-								<ul class="side-nav">
-									<li><a href="http://getpelican.com/">Pelican</a></li>
-									<li><a href="http://python.org/">Python.org</a></li>
-									<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-									<li><a href="#">You can modify those links in your config file</a></li>
-								</ul>
-							</div>
-
-							<div class="panel">
-								<h5>Tags</h5>
-								<ul class="tag-cloud">
-								</ul>
-							</div>
-
-
-							<div class="panel">
-								<h5>Social</h5>
-								<ul class="side-nav">
-									<li><a href="#">Another social link</a></li>
-									<li><a href="#">You can add links in your config file</a></li>
-								</ul>
-							</div>
-						</aside>
-						<!-- End Sidebar -->
-					</div>
-
-					<!-- Footer -->
-					<footer class="row">
-						<div class="medium-9 small-12">
-							<hr/>
-							<p class="text-center">Powered by <a href="http://getpelican.com">Pelican</a> and <a href="http://foundation.zurb.com/">Zurb Foundation</a>. Theme by <a href="http://hamaluik.com">Kenton Hamaluik</a>.</p>
-						</div>
-					</footer>
-					<!-- End Footer -->
-				</section>
-				<a class="exit-off-canvas"></a>
-			</div><!--off-canvas inner-->
-		</div><!--off-canvas wrap-->
-
-		<script src="http://SilverSurfer0.github.io/theme/js/jquery.js"></script>
-		<script src="http://SilverSurfer0.github.io/theme/js/foundation.min.js"></script>
-		<script>
-			$(document).foundation();
-		</script>
-	</body>
+      <footer>
+	  <a href="http://SilverSurfer0.github.io/pages/about.html" >About</a>
+	  <div class="right-footer">
+	  <a href="http://SilverSurfer0.github.io/categories.html" >Categories</a>
+	  <a href="http://SilverSurfer0.github.io/tags.html" >Tags</a>
+	  </div>
+      </footer>
+</body>
 </html>
