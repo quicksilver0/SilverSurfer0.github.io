@@ -1,0 +1,7 @@
+Title: Interactive Barchart
+Slug: interactive-barchart
+Date: 2017-09-04 22:00
+Category: Portfolio
+Tags: python matplotlib
+author: Vladimir Kuzmenkov
+Summary: A nice interactive barchart. Highlights bars based on confidence interval and the value picked by a user.
