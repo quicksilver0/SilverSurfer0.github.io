@@ -1840,10 +1840,10 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
 &lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div id="bfe0d5d8-4314-4072-a659-079001a373f7"&gt;&lt;/div&gt;
+&lt;div id="e8454cba-6679-42e0-9edb-db30fe6fd0cb"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#bfe0d5d8-4314-4072-a659-079001a373f7');
+var element = $('#e8454cba-6679-42e0-9edb-db30fe6fd0cb');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -3789,10 +3789,10 @@ h6:hover .anchor-link {
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
 &lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div id="2d643e52-92d4-42d7-858e-e605c9f0f689"&gt;&lt;/div&gt;
+&lt;div id="13e6da7b-055a-4a9a-a750-787cb78bf23e"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#2d643e52-92d4-42d7-858e-e605c9f0f689');
+var element = $('#13e6da7b-055a-4a9a-a750-787cb78bf23e');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
