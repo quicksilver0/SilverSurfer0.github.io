@@ -1,0 +1,2169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Vladimir" />
+    <meta name="generator" content="Pelican (VoidyBootstrap theme)" />
+
+    <title>Interactive Barchart - A jupyter Blog</title>
+
+   
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+              crossorigin="anonymous" />
+      <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous">
+
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" integrity="sha384-FFgGfda92tXC8nCNOxrCQ3R8x1TNkMFqDZVQdDaaJiiVbjkPBXIJBx0o7ETjy8Bh" crossorigin="anonymous"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="http://SilverSurfer0.github.io/favicon.ico" />
+        <link href="http://SilverSurfer0.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A jupyter Blog Atom Feed" />
+  </head>
+
+  <body>
+   
+    <nav class="navbar navbar-default">
+      <div class="container">
+	   <div class="navbar-header">
+		<button type="button" class="navbar-toggle" 
+				data-toggle="collapse" data-target="#main-navbar-collapse">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="http://SilverSurfer0.github.io/" rel="home">
+          <i class="fa fa-home fa-fw fa-lg"> </i> </a>
+       </div>
+
+      <div class="collapse navbar-collapse" id="main-navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="divider"></li>
+            <li class="">
+              <a href="http://SilverSurfer0.github.io/archives.html">Archives</a>
+            </li>
+          <li class="divider"></li>
+            <li><a href="http://SilverSurfer0.github.io/feeds/all.atom.xml" 
+                   type="application/atom+xml" rel="alternate">
+                <i class="fa fa-rss fa-fw fa-lg"></i> </a></li>
+        </ul> <!-- /nav -->
+      </div> <!-- /navbar-collapse -->
+	  </div> <!-- /container -->
+    </nav> <!-- /navbar -->
+
+	<div class="jumbotron" id="overview">
+	  <div class="container">
+		<h1><a href="http://SilverSurfer0.github.io/">A jupyter Blog</a></h1>
+	  </div>
+	</div>
+
+    <div class="container" id="main-container">
+        <div class="" id="content">
+<article itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+  <header class="article-header">
+<abbr class="article-header-date">
+  Mon 04 September 2017
+</abbr> <h1>
+  <a href="http://SilverSurfer0.github.io/interactive-barchart.html" rel="bookmark"
+     title="Permalink to Interactive Barchart">
+    Interactive Barchart
+  </a>
+</h1><div class="article-header-info">
+  <p>
+      Posted by <a href="http://SilverSurfer0.github.io/author/vladimir-kuzmenkov.html">Vladimir Kuzmenkov</a>
+    in 
+    <a href="http://SilverSurfer0.github.io/category/portfolio.html">
+      Portfolio</a>
+    &nbsp;&nbsp;
+  </p>
+</div> <!-- /.article-header-info -->  </header>
+  <div class="content-body" itemprop="text articleBody">
+	<style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected {
+  border-color: #ababab;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  div.cell.selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  padding: 0.4em;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+.rendered_html pre,
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+.rendered_html td,
+
+
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<style type="text/css">
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Custom-Visualization">Custom Visualization<a class="anchor-link" href="#Custom-Visualization">¶</a></h3><hr />
+<p>In this <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/Ferreira_Fisher_Sample_Oriented_Tasks.pdf">paper</a> the authors describe the challenges users face when trying to make judgements about probabilistic data generated through samples. As an example, they look at a bar chart of four years of data (replicated below in Figure 1). Each year has a y-axis value, which is derived from a sample of a larger dataset. For instance, the first value might be the number votes in a given district or riding for 1992, with the average being around 33,000. On top of this is plotted the 95% confidence interval for the mean (see the boxplot lectures for more information, and the yerr parameter of barcharts).</p>
+<p><br />
+<img alt="Figure 1" src="readonly/Assignment3Fig1.png" style="width: 400px;" /></p>
+<h4 markdown="1" style="text-align: center;">          Figure 1 from (Ferreira et al, 2014).</h4><p><br /></p>
+<p>A challenge that users face is that, for a given y-axis value (e.g. 42,000), it is difficult to know which x-axis values are most likely to be representative, because the confidence levels overlap and their distributions are different (the lengths of the confidence interval bars are unequal). One of the solutions the authors propose for this problem (Figure 2c) is to allow users to indicate the y-axis value of interest (e.g. 42,000) and then draw a horizontal line and color bars based on this value. So bars might be colored red if they are definitely above this value (given the confidence interval), blue if they are definitely below this value, or white if they contain this value.</p>
+<p><br />
+<img alt="Figure 1" src="readonly/Assignment3Fig2c.png" style="width: 400px;" /></p>
+<h4 markdown="1" style="text-align: center;">  Figure 2c from (Ferreira et al. 2014). Note that the colorbar legend at the bottom as well as the arrows are not required in the assignment descriptions below.</h4><p><br />
+<br /></p>
+<p><strong>Easiest option:</strong> Implement the bar coloring as described above - a color scale with only three colors, (e.g. blue, white, and red). Assume the user provides the y axis value of interest as a parameter or variable.</p>
+<p><strong>Harder option:</strong> Implement the bar coloring as described in the paper, where the color of the bar is actually based on the amount of data covered (e.g. a gradient ranging from dark blue for the distribution being certainly below this y-axis, to white if the value is certainly contained, to dark red if the value is certainly not contained as the distribution is above the axis).</p>
+<p><strong>Even Harder option:</strong> Add interactivity to the above, which allows the user to click on the y axis to set the value of interest. The bar colors should change with respect to what value the user has selected.</p>
+<p><strong>Hardest option:</strong> Allow the user to interactively set a range of y values they are interested in, and recolor based on this (e.g. a y-axis band, see the paper for more details).</p>
+<hr />
+<p><em>Note: The data given for this assignment is not the same as the data used in the article and as a result the visualizations may look a little different.</em></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use the following data for this assignment:</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">32000</span><span class="p">,</span><span class="mi">200000</span><span class="p">,</span><span class="mi">3650</span><span class="p">),</span> 
+                   <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">43000</span><span class="p">,</span><span class="mi">100000</span><span class="p">,</span><span class="mi">3650</span><span class="p">),</span> 
+                   <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">43500</span><span class="p">,</span><span class="mi">140000</span><span class="p">,</span><span class="mi">3650</span><span class="p">),</span> 
+                   <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">48000</span><span class="p">,</span><span class="mi">70000</span><span class="p">,</span><span class="mi">3650</span><span class="p">)],</span> 
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">1992</span><span class="p">,</span><span class="mi">1993</span><span class="p">,</span><span class="mi">1994</span><span class="p">,</span><span class="mi">1995</span><span class="p">])</span>
+<span class="c1">#df.loc[1992]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">math</span>
+
+<span class="c1">#count,bins,ignored = plt.hist(df.loc[1992], bins=100, normed=True)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Easiest Option</span>
+<span class="c1">#Setting color of the bars to plain blue, white, red</span>
+
+<span class="n">bar1992_mean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1992</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[</span><span class="s1">'mean'</span><span class="p">]</span>
+<span class="n">bar1992_std</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1992</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[</span><span class="s1">'std'</span><span class="p">]</span>
+<span class="n">bar1992_count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1992</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[</span><span class="s1">'count'</span><span class="p">]</span>
+<span class="n">bar1993_mean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1993</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[</span><span class="s1">'mean'</span><span class="p">]</span>
+<span class="n">bar1993_std</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1993</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[</span><span class="s1">'std'</span><span class="p">]</span>
+<span class="n">bar1993_count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1993</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[</span><span class="s1">'count'</span><span class="p">]</span>
+<span class="n">bar1994_mean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1994</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[</span><span class="s1">'mean'</span><span class="p">]</span>
+<span class="n">bar1994_std</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1994</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[</span><span class="s1">'std'</span><span class="p">]</span>
+<span class="n">bar1994_count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1994</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[</span><span class="s1">'count'</span><span class="p">]</span>
+<span class="n">bar1995_mean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[</span><span class="s1">'mean'</span><span class="p">]</span>
+<span class="n">bar1995_std</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[</span><span class="s1">'std'</span><span class="p">]</span>
+<span class="n">bar1995_count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[</span><span class="s1">'count'</span><span class="p">]</span>
+<span class="n">annual_means</span> <span class="o">=</span> <span class="p">[</span><span class="n">bar1992_mean</span><span class="p">,</span><span class="n">bar1993_mean</span><span class="p">,</span><span class="n">bar1994_mean</span><span class="p">,</span><span class="n">bar1995_mean</span><span class="p">]</span>
+
+<span class="c1">#calculate confidence interval</span>
+<span class="n">bar1992_conf_distance</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">bar1992_std</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">bar1992_count</span><span class="p">))</span>
+<span class="n">bar1992_confinterval_min</span> <span class="o">=</span> <span class="n">bar1992_mean</span> <span class="o">-</span> <span class="n">bar1992_conf_distance</span>
+<span class="n">bar1992_confinterval_max</span> <span class="o">=</span> <span class="n">bar1992_mean</span> <span class="o">+</span> <span class="n">bar1992_conf_distance</span>
+<span class="n">bar1993_conf_distance</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">bar1993_std</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">bar1993_count</span><span class="p">))</span>
+<span class="n">bar1993_confinterval_min</span> <span class="o">=</span> <span class="n">bar1993_mean</span> <span class="o">-</span> <span class="n">bar1993_conf_distance</span>
+<span class="n">bar1993_confinterval_max</span> <span class="o">=</span> <span class="n">bar1993_mean</span> <span class="o">+</span> <span class="n">bar1993_conf_distance</span>
+<span class="n">bar1994_conf_distance</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">bar1994_std</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">bar1994_count</span><span class="p">))</span>
+<span class="n">bar1994_confinterval_min</span> <span class="o">=</span> <span class="n">bar1994_mean</span> <span class="o">-</span> <span class="n">bar1994_conf_distance</span>
+<span class="n">bar1994_confinterval_max</span> <span class="o">=</span> <span class="n">bar1994_mean</span> <span class="o">+</span> <span class="n">bar1994_conf_distance</span>
+<span class="n">bar1995_conf_distance</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">bar1995_std</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">bar1995_count</span><span class="p">))</span>
+<span class="n">bar1995_confinterval_min</span> <span class="o">=</span> <span class="n">bar1995_mean</span> <span class="o">-</span> <span class="n">bar1995_conf_distance</span>
+<span class="n">bar1995_confinterval_max</span> <span class="o">=</span> <span class="n">bar1995_mean</span> <span class="o">+</span> <span class="n">bar1995_conf_distance</span>
+<span class="n">bar_confdistance_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">bar1992_conf_distance</span><span class="p">,</span><span class="n">bar1993_conf_distance</span><span class="p">,</span><span class="n">bar1994_conf_distance</span><span class="p">,</span><span class="n">bar1995_conf_distance</span><span class="p">]</span>
+
+<span class="n">value_of_interest</span> <span class="o">=</span> <span class="mi">38500</span>
+
+<span class="n">N</span><span class="o">=</span><span class="mi">4</span>
+<span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">bars</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">annual_means</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">annual_means</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">bar_confdistance_list</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">' '</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">elinewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="k">global</span> <span class="n">line</span>
+<span class="n">line</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">value_of_interest</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">'#B74500'</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+
+<span class="c1">#Set colors using only 3 values: blue, white, red</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bar</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bars</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">value_of_interest</span> <span class="o">&gt;</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#005999'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&lt;</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#ae0001'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#f8f8ff'</span><span class="p">)</span>
+
+<span class="c1">#Configure visualizations</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">'1992'</span><span class="p">,</span><span class="s1">'1993'</span><span class="p">,</span><span class="s1">'1994'</span><span class="p">,</span><span class="s1">'1995'</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Interactive Bar Chart, values per Year'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">spine</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+    <span class="n">spine</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">spine</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">spine</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">'grey'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'both'</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="s1">'off'</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="s1">'off'</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="s1">'on'</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="s1">'off'</span><span class="p">,</span> <span class="n">labelleft</span><span class="o">=</span><span class="s1">'on'</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="s1">'on'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#404040'</span><span class="p">,</span><span class="n">labelcolor</span><span class="o">=</span><span class="s1">'#404040'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">bar</span> <span class="ow">in</span> <span class="n">bars</span><span class="p">:</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">height</span><span class="o">-</span><span class="n">height</span><span class="o">*</span><span class="mf">0.4</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="p">)),</span> 
+                 <span class="n">ha</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()</span>
+<span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()</span>
+
+<span class="k">global</span> <span class="n">ann_text</span>
+<span class="n">ann_text</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xmin</span><span class="o">+</span><span class="n">xmax</span><span class="o">*</span><span class="mf">0.05</span><span class="p">,</span>
+         <span class="n">ymax</span><span class="o">*</span><span class="mf">0.9</span><span class="p">,</span>
+         <span class="s1">'Var='</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">value_of_interest</span><span class="p">),</span>
+        <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#B74500'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div id="238689b6-f092-4ef6-a497-96cc540c7824"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#238689b6-f092-4ef6-a497-96cc540c7824');
+/* Put everything inside the global mpl namespace */
+window.mpl = {};
+
+
+mpl.get_websocket_type = function() {
+    if (typeof(WebSocket) !== 'undefined') {
+        return WebSocket;
+    } else if (typeof(MozWebSocket) !== 'undefined') {
+        return MozWebSocket;
+    } else {
+        alert('Your browser does not have WebSocket support.' +
+              'Please try Chrome, Safari or Firefox ≥ 6. ' +
+              'Firefox 4 and 5 are also supported but you ' +
+              'have to enable WebSockets in about:config.');
+    };
+}
+
+mpl.figure = function(figure_id, websocket, ondownload, parent_element) {
+    this.id = figure_id;
+
+    this.ws = websocket;
+
+    this.supports_binary = (this.ws.binaryType != undefined);
+
+    if (!this.supports_binary) {
+        var warnings = document.getElementById("mpl-warnings");
+        if (warnings) {
+            warnings.style.display = 'block';
+            warnings.textContent = (
+                "This browser does not support binary websocket messages. " +
+                    "Performance may be slow.");
+        }
+    }
+
+    this.imageObj = new Image();
+
+    this.context = undefined;
+    this.message = undefined;
+    this.canvas = undefined;
+    this.rubberband_canvas = undefined;
+    this.rubberband_context = undefined;
+    this.format_dropdown = undefined;
+
+    this.image_mode = 'full';
+
+    this.root = $('<div/>');
+    this._root_extra_style(this.root)
+    this.root.attr('style', 'display: inline-block');
+
+    $(parent_element).append(this.root);
+
+    this._init_header(this);
+    this._init_canvas(this);
+    this._init_toolbar(this);
+
+    var fig = this;
+
+    this.waiting = false;
+
+    this.ws.onopen =  function () {
+            fig.send_message("supports_binary", {value: fig.supports_binary});
+            fig.send_message("send_image_mode", {});
+            if (mpl.ratio != 1) {
+                fig.send_message("set_dpi_ratio", {'dpi_ratio': mpl.ratio});
+            }
+            fig.send_message("refresh", {});
+        }
+
+    this.imageObj.onload = function() {
+            if (fig.image_mode == 'full') {
+                // Full images could contain transparency (where diff images
+                // almost always do), so we need to clear the canvas so that
+                // there is no ghosting.
+                fig.context.clearRect(0, 0, fig.canvas.width, fig.canvas.height);
+            }
+            fig.context.drawImage(fig.imageObj, 0, 0);
+        };
+
+    this.imageObj.onunload = function() {
+        this.ws.close();
+    }
+
+    this.ws.onmessage = this._make_on_message_function(this);
+
+    this.ondownload = ondownload;
+}
+
+mpl.figure.prototype._init_header = function() {
+    var titlebar = $(
+        '<div class="ui-dialog-titlebar ui-widget-header ui-corner-all ' +
+        'ui-helper-clearfix"/>');
+    var titletext = $(
+        '<div class="ui-dialog-title" style="width: 100%; ' +
+        'text-align: center; padding: 3px;"/>');
+    titlebar.append(titletext)
+    this.root.append(titlebar);
+    this.header = titletext[0];
+}
+
+
+
+mpl.figure.prototype._canvas_extra_style = function(canvas_div) {
+
+}
+
+
+mpl.figure.prototype._root_extra_style = function(canvas_div) {
+
+}
+
+mpl.figure.prototype._init_canvas = function() {
+    var fig = this;
+
+    var canvas_div = $('<div/>');
+
+    canvas_div.attr('style', 'position: relative; clear: both; outline: 0');
+
+    function canvas_keyboard_event(event) {
+        return fig.key_event(event, event['data']);
+    }
+
+    canvas_div.keydown('key_press', canvas_keyboard_event);
+    canvas_div.keyup('key_release', canvas_keyboard_event);
+    this.canvas_div = canvas_div
+    this._canvas_extra_style(canvas_div)
+    this.root.append(canvas_div);
+
+    var canvas = $('<canvas/>');
+    canvas.addClass('mpl-canvas');
+    canvas.attr('style', "left: 0; top: 0; z-index: 0; outline: 0")
+
+    this.canvas = canvas[0];
+    this.context = canvas[0].getContext("2d");
+
+    var backingStore = this.context.backingStorePixelRatio ||
+	this.context.webkitBackingStorePixelRatio ||
+	this.context.mozBackingStorePixelRatio ||
+	this.context.msBackingStorePixelRatio ||
+	this.context.oBackingStorePixelRatio ||
+	this.context.backingStorePixelRatio || 1;
+
+    mpl.ratio = (window.devicePixelRatio || 1) / backingStore;
+
+    var rubberband = $('<canvas/>');
+    rubberband.attr('style', "position: absolute; left: 0; top: 0; z-index: 1;")
+
+    var pass_mouse_events = true;
+
+    canvas_div.resizable({
+        start: function(event, ui) {
+            pass_mouse_events = false;
+        },
+        resize: function(event, ui) {
+            fig.request_resize(ui.size.width, ui.size.height);
+        },
+        stop: function(event, ui) {
+            pass_mouse_events = true;
+            fig.request_resize(ui.size.width, ui.size.height);
+        },
+    });
+
+    function mouse_event_fn(event) {
+        if (pass_mouse_events)
+            return fig.mouse_event(event, event['data']);
+    }
+
+    rubberband.mousedown('button_press', mouse_event_fn);
+    rubberband.mouseup('button_release', mouse_event_fn);
+    // Throttle sequential mouse events to 1 every 20ms.
+    rubberband.mousemove('motion_notify', mouse_event_fn);
+
+    rubberband.mouseenter('figure_enter', mouse_event_fn);
+    rubberband.mouseleave('figure_leave', mouse_event_fn);
+
+    canvas_div.on("wheel", function (event) {
+        event = event.originalEvent;
+        event['data'] = 'scroll'
+        if (event.deltaY < 0) {
+            event.step = 1;
+        } else {
+            event.step = -1;
+        }
+        mouse_event_fn(event);
+    });
+
+    canvas_div.append(canvas);
+    canvas_div.append(rubberband);
+
+    this.rubberband = rubberband;
+    this.rubberband_canvas = rubberband[0];
+    this.rubberband_context = rubberband[0].getContext("2d");
+    this.rubberband_context.strokeStyle = "#000000";
+
+    this._resize_canvas = function(width, height) {
+        // Keep the size of the canvas, canvas container, and rubber band
+        // canvas in synch.
+        canvas_div.css('width', width)
+        canvas_div.css('height', height)
+
+        canvas.attr('width', width * mpl.ratio);
+        canvas.attr('height', height * mpl.ratio);
+        canvas.attr('style', 'width: ' + width + 'px; height: ' + height + 'px;');
+
+        rubberband.attr('width', width);
+        rubberband.attr('height', height);
+    }
+
+    // Set the figure to an initial 600x600px, this will subsequently be updated
+    // upon first draw.
+    this._resize_canvas(600, 600);
+
+    // Disable right mouse context menu.
+    $(this.rubberband_canvas).bind("contextmenu",function(e){
+        return false;
+    });
+
+    function set_focus () {
+        canvas.focus();
+        canvas_div.focus();
+    }
+
+    window.setTimeout(set_focus, 100);
+}
+
+mpl.figure.prototype._init_toolbar = function() {
+    var fig = this;
+
+    var nav_element = $('<div/>')
+    nav_element.attr('style', 'width: 100%');
+    this.root.append(nav_element);
+
+    // Define a callback function for later on.
+    function toolbar_event(event) {
+        return fig.toolbar_button_onclick(event['data']);
+    }
+    function toolbar_mouse_event(event) {
+        return fig.toolbar_button_onmouseover(event['data']);
+    }
+
+    for(var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            // put a spacer in here.
+            continue;
+        }
+        var button = $('<button/>');
+        button.addClass('ui-button ui-widget ui-state-default ui-corner-all ' +
+                        'ui-button-icon-only');
+        button.attr('role', 'button');
+        button.attr('aria-disabled', 'false');
+        button.click(method_name, toolbar_event);
+        button.mouseover(tooltip, toolbar_mouse_event);
+
+        var icon_img = $('<span/>');
+        icon_img.addClass('ui-button-icon-primary ui-icon');
+        icon_img.addClass(image);
+        icon_img.addClass('ui-corner-all');
+
+        var tooltip_span = $('<span/>');
+        tooltip_span.addClass('ui-button-text');
+        tooltip_span.html(tooltip);
+
+        button.append(icon_img);
+        button.append(tooltip_span);
+
+        nav_element.append(button);
+    }
+
+    var fmt_picker_span = $('<span/>');
+
+    var fmt_picker = $('<select/>');
+    fmt_picker.addClass('mpl-toolbar-option ui-widget ui-widget-content');
+    fmt_picker_span.append(fmt_picker);
+    nav_element.append(fmt_picker_span);
+    this.format_dropdown = fmt_picker[0];
+
+    for (var ind in mpl.extensions) {
+        var fmt = mpl.extensions[ind];
+        var option = $(
+            '<option/>', {selected: fmt === mpl.default_extension}).html(fmt);
+        fmt_picker.append(option)
+    }
+
+    // Add hover states to the ui-buttons
+    $( ".ui-button" ).hover(
+        function() { $(this).addClass("ui-state-hover");},
+        function() { $(this).removeClass("ui-state-hover");}
+    );
+
+    var status_bar = $('<span class="mpl-message"/>');
+    nav_element.append(status_bar);
+    this.message = status_bar[0];
+}
+
+mpl.figure.prototype.request_resize = function(x_pixels, y_pixels) {
+    // Request matplotlib to resize the figure. Matplotlib will then trigger a resize in the client,
+    // which will in turn request a refresh of the image.
+    this.send_message('resize', {'width': x_pixels, 'height': y_pixels});
+}
+
+mpl.figure.prototype.send_message = function(type, properties) {
+    properties['type'] = type;
+    properties['figure_id'] = this.id;
+    this.ws.send(JSON.stringify(properties));
+}
+
+mpl.figure.prototype.send_draw_message = function() {
+    if (!this.waiting) {
+        this.waiting = true;
+        this.ws.send(JSON.stringify({type: "draw", figure_id: this.id}));
+    }
+}
+
+
+mpl.figure.prototype.handle_save = function(fig, msg) {
+    var format_dropdown = fig.format_dropdown;
+    var format = format_dropdown.options[format_dropdown.selectedIndex].value;
+    fig.ondownload(fig, format);
+}
+
+
+mpl.figure.prototype.handle_resize = function(fig, msg) {
+    var size = msg['size'];
+    if (size[0] != fig.canvas.width || size[1] != fig.canvas.height) {
+        fig._resize_canvas(size[0], size[1]);
+        fig.send_message("refresh", {});
+    };
+}
+
+mpl.figure.prototype.handle_rubberband = function(fig, msg) {
+    var x0 = msg['x0'] / mpl.ratio;
+    var y0 = (fig.canvas.height - msg['y0']) / mpl.ratio;
+    var x1 = msg['x1'] / mpl.ratio;
+    var y1 = (fig.canvas.height - msg['y1']) / mpl.ratio;
+    x0 = Math.floor(x0) + 0.5;
+    y0 = Math.floor(y0) + 0.5;
+    x1 = Math.floor(x1) + 0.5;
+    y1 = Math.floor(y1) + 0.5;
+    var min_x = Math.min(x0, x1);
+    var min_y = Math.min(y0, y1);
+    var width = Math.abs(x1 - x0);
+    var height = Math.abs(y1 - y0);
+
+    fig.rubberband_context.clearRect(
+        0, 0, fig.canvas.width, fig.canvas.height);
+
+    fig.rubberband_context.strokeRect(min_x, min_y, width, height);
+}
+
+mpl.figure.prototype.handle_figure_label = function(fig, msg) {
+    // Updates the figure title.
+    fig.header.textContent = msg['label'];
+}
+
+mpl.figure.prototype.handle_cursor = function(fig, msg) {
+    var cursor = msg['cursor'];
+    switch(cursor)
+    {
+    case 0:
+        cursor = 'pointer';
+        break;
+    case 1:
+        cursor = 'default';
+        break;
+    case 2:
+        cursor = 'crosshair';
+        break;
+    case 3:
+        cursor = 'move';
+        break;
+    }
+    fig.rubberband_canvas.style.cursor = cursor;
+}
+
+mpl.figure.prototype.handle_message = function(fig, msg) {
+    fig.message.textContent = msg['message'];
+}
+
+mpl.figure.prototype.handle_draw = function(fig, msg) {
+    // Request the server to send over a new figure.
+    fig.send_draw_message();
+}
+
+mpl.figure.prototype.handle_image_mode = function(fig, msg) {
+    fig.image_mode = msg['mode'];
+}
+
+mpl.figure.prototype.updated_canvas_event = function() {
+    // Called whenever the canvas gets updated.
+    this.send_message("ack", {});
+}
+
+// A function to construct a web socket function for onmessage handling.
+// Called in the figure constructor.
+mpl.figure.prototype._make_on_message_function = function(fig) {
+    return function socket_on_message(evt) {
+        if (evt.data instanceof Blob) {
+            /* FIXME: We get "Resource interpreted as Image but
+             * transferred with MIME type text/plain:" errors on
+             * Chrome.  But how to set the MIME type?  It doesn't seem
+             * to be part of the websocket stream */
+            evt.data.type = "image/png";
+
+            /* Free the memory for the previous frames */
+            if (fig.imageObj.src) {
+                (window.URL || window.webkitURL).revokeObjectURL(
+                    fig.imageObj.src);
+            }
+
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+                evt.data);
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+        else if (typeof evt.data === 'string' && evt.data.slice(0, 21) == "data:image/png;base64") {
+            fig.imageObj.src = evt.data;
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+
+        var msg = JSON.parse(evt.data);
+        var msg_type = msg['type'];
+
+        // Call the  "handle_{type}" callback, which takes
+        // the figure and JSON message as its only arguments.
+        try {
+            var callback = fig["handle_" + msg_type];
+        } catch (e) {
+            console.log("No handler for the '" + msg_type + "' message type: ", msg);
+            return;
+        }
+
+        if (callback) {
+            try {
+                // console.log("Handling '" + msg_type + "' message: ", msg);
+                callback(fig, msg);
+            } catch (e) {
+                console.log("Exception inside the 'handler_" + msg_type + "' callback:", e, e.stack, msg);
+            }
+        }
+    };
+}
+
+// from http://stackoverflow.com/questions/1114465/getting-mouse-location-in-canvas
+mpl.findpos = function(e) {
+    //this section is from http://www.quirksmode.org/js/events_properties.html
+    var targ;
+    if (!e)
+        e = window.event;
+    if (e.target)
+        targ = e.target;
+    else if (e.srcElement)
+        targ = e.srcElement;
+    if (targ.nodeType == 3) // defeat Safari bug
+        targ = targ.parentNode;
+
+    // jQuery normalizes the pageX and pageY
+    // pageX,Y are the mouse positions relative to the document
+    // offset() returns the position of the element relative to the document
+    var x = e.pageX - $(targ).offset().left;
+    var y = e.pageY - $(targ).offset().top;
+
+    return {"x": x, "y": y};
+};
+
+/*
+ * return a copy of an object with only non-object keys
+ * we need this to avoid circular references
+ * http://stackoverflow.com/a/24161582/3208463
+ */
+function simpleKeys (original) {
+  return Object.keys(original).reduce(function (obj, key) {
+    if (typeof original[key] !== 'object')
+        obj[key] = original[key]
+    return obj;
+  }, {});
+}
+
+mpl.figure.prototype.mouse_event = function(event, name) {
+    var canvas_pos = mpl.findpos(event)
+
+    if (name === 'button_press')
+    {
+        this.canvas.focus();
+        this.canvas_div.focus();
+    }
+
+    var x = canvas_pos.x * mpl.ratio;
+    var y = canvas_pos.y * mpl.ratio;
+
+    this.send_message(name, {x: x, y: y, button: event.button,
+                             step: event.step,
+                             guiEvent: simpleKeys(event)});
+
+    /* This prevents the web browser from automatically changing to
+     * the text insertion cursor when the button is pressed.  We want
+     * to control all of the cursor setting manually through the
+     * 'cursor' event from matplotlib */
+    event.preventDefault();
+    return false;
+}
+
+mpl.figure.prototype._key_event_extra = function(event, name) {
+    // Handle any extra behaviour associated with a key event
+}
+
+mpl.figure.prototype.key_event = function(event, name) {
+
+    // Prevent repeat events
+    if (name == 'key_press')
+    {
+        if (event.which === this._key)
+            return;
+        else
+            this._key = event.which;
+    }
+    if (name == 'key_release')
+        this._key = null;
+
+    var value = '';
+    if (event.ctrlKey && event.which != 17)
+        value += "ctrl+";
+    if (event.altKey && event.which != 18)
+        value += "alt+";
+    if (event.shiftKey && event.which != 16)
+        value += "shift+";
+
+    value += 'k';
+    value += event.which.toString();
+
+    this._key_event_extra(event, name);
+
+    this.send_message(name, {key: value,
+                             guiEvent: simpleKeys(event)});
+    return false;
+}
+
+mpl.figure.prototype.toolbar_button_onclick = function(name) {
+    if (name == 'download') {
+        this.handle_save(this, null);
+    } else {
+        this.send_message("toolbar_button", {name: name});
+    }
+};
+
+mpl.figure.prototype.toolbar_button_onmouseover = function(tooltip) {
+    this.message.textContent = tooltip;
+};
+mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home icon-home", "home"], ["Back", "Back to  previous view", "fa fa-arrow-left icon-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right icon-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Pan axes with left mouse, zoom with right", "fa fa-arrows icon-move", "pan"], ["Zoom", "Zoom to rectangle", "fa fa-square-o icon-check-empty", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o icon-save", "download"]];
+
+mpl.extensions = ["eps", "jpeg", "pdf", "png", "ps", "raw", "svg", "tif"];
+
+mpl.default_extension = "png";var comm_websocket_adapter = function(comm) {
+    // Create a "websocket"-like object which calls the given IPython comm
+    // object with the appropriate methods. Currently this is a non binary
+    // socket, so there is still some room for performance tuning.
+    var ws = {};
+
+    ws.close = function() {
+        comm.close()
+    };
+    ws.send = function(m) {
+        //console.log('sending', m);
+        comm.send(m);
+    };
+    // Register the callback with on_msg.
+    comm.on_msg(function(msg) {
+        //console.log('receiving', msg['content']['data'], msg);
+        // Pass the mpl event to the overriden (by mpl) onmessage function.
+        ws.onmessage(msg['content']['data'])
+    });
+    return ws;
+}
+
+mpl.mpl_figure_comm = function(comm, msg) {
+    // This is the function which gets called when the mpl process
+    // starts-up an IPython Comm through the "matplotlib" channel.
+
+    var id = msg.content.data.id;
+    // Get hold of the div created by the display call when the Comm
+    // socket was opened in Python.
+    var element = $("#" + id);
+    var ws_proxy = comm_websocket_adapter(comm)
+
+    function ondownload(figure, format) {
+        window.open(figure.imageObj.src);
+    }
+
+    var fig = new mpl.figure(id, ws_proxy,
+                           ondownload,
+                           element.get(0));
+
+    // Call onopen now - mpl needs it, as it is assuming we've passed it a real
+    // web socket which is closed, not our websocket->open comm proxy.
+    ws_proxy.onopen();
+
+    fig.parent_element = element.get(0);
+    fig.cell_info = mpl.find_output_cell("<div id='" + id + "'></div>");
+    if (!fig.cell_info) {
+        console.error("Failed to find cell for figure", id, fig);
+        return;
+    }
+
+    var output_index = fig.cell_info[2]
+    var cell = fig.cell_info[0];
+
+};
+
+mpl.figure.prototype.handle_close = function(fig, msg) {
+    var width = fig.canvas.width/mpl.ratio
+    fig.root.unbind('remove')
+
+    // Update the output cell to use the data from the current canvas.
+    fig.push_to_output();
+    var dataURL = fig.canvas.toDataURL();
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // the notebook keyboard shortcuts fail.
+    IPython.keyboard_manager.enable()
+    $(fig.parent_element).html('<img src="' + dataURL + '" width="' + width + '">');
+    fig.close_ws(fig, msg);
+}
+
+mpl.figure.prototype.close_ws = function(fig, msg){
+    fig.send_message('closing', msg);
+    // fig.ws.close()
+}
+
+mpl.figure.prototype.push_to_output = function(remove_interactive) {
+    // Turn the data on the canvas into data in the output cell.
+    var width = this.canvas.width/mpl.ratio
+    var dataURL = this.canvas.toDataURL();
+    this.cell_info[1]['text/html'] = '<img src="' + dataURL + '" width="' + width + '">';
+}
+
+mpl.figure.prototype.updated_canvas_event = function() {
+    // Tell IPython that the notebook contents must change.
+    IPython.notebook.set_dirty(true);
+    this.send_message("ack", {});
+    var fig = this;
+    // Wait a second, then push the new image to the DOM so
+    // that it is saved nicely (might be nice to debounce this).
+    setTimeout(function () { fig.push_to_output() }, 1000);
+}
+
+mpl.figure.prototype._init_toolbar = function() {
+    var fig = this;
+
+    var nav_element = $('<div/>')
+    nav_element.attr('style', 'width: 100%');
+    this.root.append(nav_element);
+
+    // Define a callback function for later on.
+    function toolbar_event(event) {
+        return fig.toolbar_button_onclick(event['data']);
+    }
+    function toolbar_mouse_event(event) {
+        return fig.toolbar_button_onmouseover(event['data']);
+    }
+
+    for(var toolbar_ind in mpl.toolbar_items){
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) { continue; };
+
+        var button = $('<button class="btn btn-default" href="#" title="' + name + '"><i class="fa ' + image + ' fa-lg"></i></button>');
+        button.click(method_name, toolbar_event);
+        button.mouseover(tooltip, toolbar_mouse_event);
+        nav_element.append(button);
+    }
+
+    // Add the status bar.
+    var status_bar = $('<span class="mpl-message" style="text-align:right; float: right;"/>');
+    nav_element.append(status_bar);
+    this.message = status_bar[0];
+
+    // Add the close button to the window.
+    var buttongrp = $('<div class="btn-group inline pull-right"></div>');
+    var button = $('<button class="btn btn-mini btn-primary" href="#" title="Stop Interaction"><i class="fa fa-power-off icon-remove icon-large"></i></button>');
+    button.click(function (evt) { fig.handle_close(fig, {}); } );
+    button.mouseover('Stop Interaction', toolbar_mouse_event);
+    buttongrp.append(button);
+    var titlebar = this.root.find($('.ui-dialog-titlebar'));
+    titlebar.prepend(buttongrp);
+}
+
+mpl.figure.prototype._root_extra_style = function(el){
+    var fig = this
+    el.on("remove", function(){
+	fig.close_ws(fig, {});
+    });
+}
+
+mpl.figure.prototype._canvas_extra_style = function(el){
+    // this is important to make the div 'focusable
+    el.attr('tabindex', 0)
+    // reach out to IPython and tell the keyboard manager to turn it's self
+    // off when our div gets focus
+
+    // location in version 3
+    if (IPython.notebook.keyboard_manager) {
+        IPython.notebook.keyboard_manager.register_events(el);
+    }
+    else {
+        // location in version 2
+        IPython.keyboard_manager.register_events(el);
+    }
+
+}
+
+mpl.figure.prototype._key_event_extra = function(event, name) {
+    var manager = IPython.notebook.keyboard_manager;
+    if (!manager)
+        manager = IPython.keyboard_manager;
+
+    // Check for shift+enter
+    if (event.shiftKey && event.which == 13) {
+        this.canvas_div.blur();
+        // select the cell after this one
+        var index = IPython.notebook.find_cell_index(this.cell_info[0]);
+        IPython.notebook.select(index + 1);
+    }
+}
+
+mpl.figure.prototype.handle_save = function(fig, msg) {
+    fig.ondownload(fig, null);
+}
+
+
+mpl.find_output_cell = function(html_output) {
+    // Return the cell and output element which can be found *uniquely* in the notebook.
+    // Note - this is a bit hacky, but it is done because the "notebook_saving.Notebook"
+    // IPython event is triggered only after the cells have been serialised, which for
+    // our purposes (turning an active figure into a static one), is too late.
+    var cells = IPython.notebook.get_cells();
+    var ncells = cells.length;
+    for (var i=0; i<ncells; i++) {
+        var cell = cells[i];
+        if (cell.cell_type === 'code'){
+            for (var j=0; j<cell.output_area.outputs.length; j++) {
+                var data = cell.output_area.outputs[j];
+                if (data.data) {
+                    // IPython >= 3 moved mimebundle to data attribute of output
+                    data = data.data;
+                }
+                if (data['text/html'] == html_output) {
+                    return [cell, data, j];
+                }
+            }
+        }
+    }
+}
+
+// Register the function which deals with the matplotlib target/channel.
+// The kernel may be null if the page has been refreshed.
+if (IPython.notebook.kernel != null) {
+    IPython.notebook.kernel.comm_manager.register_target('matplotlib', mpl.mpl_figure_comm);
+}
+
+</script>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAYAAAA10dzkAAAgAElEQVR4XuydB5gURfr/vz27yyISVZIJwYBiDphhexYUUTk9FQNnvjNhwCxGklk5A5yY7tRTfwZEz9MTJbg9YDoxYkI9RQxERTLLstv1f95xev/Dursz09U13bP77efhuXOn3qrqz1uz85mq6loLvEiABEiABEiABEiABJoVAatZ3S1vlgRIgARIgARIgARIABRADgISIAESIAESIAESaGYEKIDNLOG8XRIgARIgARIgARKgAHIMkAAJkAAJkAAJkEAzI0ABbGYJ5+2SAAmQAAmQAAmQAAWQY4AESIAESIAESIAEmhkBCmAzSzhvlwRIgARIgARIgAQogBwDJEACJEACJEACJNDMCFAAm1nCebskQAIkQAIkQAIkQAHkGCABEiABEiABEiCBZkaAAtjMEs7bJQESIAESIAESIAEKIMcACZAACZAACZAACTQzAhTAZpZw3i4JkAAJkAAJkAAJUAA5BkiABEiABEiABEigmRGgADazhPN2SYAESIAESIAESIACyDFAAiRAAiRAAiRAAs2MAAWwmSWct0sCJEACJEACJEACFECOARIgARIgARIgARJoZgQogM0s4bxdEiABEiABEiABEqAAcgyQAAmQAAmQAAmQQDMjQAFsZgnn7ZIACZAACZAACZAABZBjgARIgARIgARIgASaGQEKYDNLOG+XBEiABEiABEiABCiAHAMkQAIkQAIkQAIk0MwIUACbWcJ5uyRAAiRAAiRAAiRAAeQYIAESIAESIAESIIFmRoAC2MwSztslARIgARIgARIgAQogxwAJkAAJkAAJkAAJNDMCFMBmlnDeLgmQAAmQAAmQAAlQADkGSIAESIAESIAESKCZEaAANrOE83ZJgARIgARIgARIgALIMUACJEACJEACJEACzYwABbCZJZy3SwIkQAIkQAIkQAIUQI4BEiABEiABEiABEmhmBCiAzSzhvN0mQeB+AH0A7Nwk7sbsTQirowF0MdtMpGv/DMBMAOdGupfsHAmQQF4JUADzipuNBUDgTwAmACgD8GGO9W0E4GIAb6Q+EHMMz2vxrgBOB/AfALPrtByWAEq7Q9L6UgNgIYB3ANwGYE4eCbUE8GcAxwHYAUALAD8CmA5A+vm/VF/yKYBRHV8UwPoHZjsA7wH4DsCh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" width="640" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Harder option</span>
+<span class="c1">#Applying Color Scales</span>
+
+<span class="n">color_scale_blue</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'#5089DC'</span><span class="p">,</span><span class="s1">'#3F7ED9'</span><span class="p">,</span><span class="s1">'#2E72D6'</span><span class="p">,</span><span class="s1">'#2768C8'</span><span class="p">,</span><span class="s1">'#2360B7'</span><span class="p">,</span><span class="s1">'#2057A6'</span><span class="p">,</span><span class="s1">'#1D4E95'</span><span class="p">,</span><span class="s1">'#194584'</span><span class="p">,</span><span class="s1">'#163C73'</span><span class="p">,</span><span class="s1">'#133361'</span><span class="p">]</span>
+<span class="n">color_scale_white_blue</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'#FFFFFF'</span><span class="p">,</span><span class="s1">'#F2F6FC'</span><span class="p">,</span><span class="s1">'#E1EAF9'</span><span class="p">,</span><span class="s1">'#D0DFF5'</span><span class="p">,</span><span class="s1">'#BFD4F2'</span><span class="p">,</span><span class="s1">'#ADC8EF'</span><span class="p">,</span><span class="s1">'#9CBDEB'</span><span class="p">,</span><span class="s1">'#8BB1E8'</span><span class="p">,</span><span class="s1">'#7AA6E5'</span><span class="p">,</span><span class="s1">'#699AE1'</span><span class="p">]</span>
+<span class="n">color_scale_white_red</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'#FFFFFF'</span><span class="p">,</span><span class="s1">'#FFEAEC'</span><span class="p">,</span><span class="s1">'#FED6DA'</span><span class="p">,</span><span class="s1">'#FEC1C7'</span><span class="p">,</span><span class="s1">'#FEADB5'</span><span class="p">,</span><span class="s1">'#FF99A3'</span><span class="p">,</span><span class="s1">'#FF8490'</span><span class="p">,</span><span class="s1">'#FF707E'</span><span class="p">,</span><span class="s1">'#FF6575'</span><span class="p">,</span><span class="s1">'#FF5B6B'</span><span class="p">]</span>
+<span class="n">color_scale_red</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'#FF8490'</span><span class="p">,</span><span class="s1">'#FF707E'</span><span class="p">,</span><span class="s1">'#FF5B6B'</span><span class="p">,</span><span class="s1">'#FF4759'</span><span class="p">,</span><span class="s1">'#FF3247'</span><span class="p">,</span><span class="s1">'#FF1E34'</span><span class="p">,</span><span class="s1">'#FF0A22'</span><span class="p">,</span><span class="s1">'#F40018'</span><span class="p">,</span><span class="s1">'#E00016'</span><span class="p">,</span><span class="s1">'#CC0014'</span><span class="p">]</span>
+
+<span class="c1">#Set colors of the bars based on the user specified value difference from the mean. Using color scales.</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bar</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bars</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">value_of_interest</span> <span class="o">&gt;=</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#699AE1'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&lt;</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#CC0014'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&lt;</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="n">digitized</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">value_of_interest</span><span class="p">,</span><span class="n">bins</span><span class="p">)</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="n">color_scale_white_red</span><span class="p">[</span><span class="n">digitized</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&gt;=</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="n">digitized</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">value_of_interest</span><span class="p">,</span><span class="n">bins</span><span class="p">)</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="n">color_scale_white_blue</span><span class="p">[</span><span class="n">digitized</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Even Harder option</span>
+<span class="c1">#Adding Interactivity "Setting User-defined Variable upon a mouse click"</span>
+
+<span class="k">def</span> <span class="nf">onclick</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="c1">#Following 3 lines is a "hack": just coloring a location with white color</span>
+    <span class="n">ann_text</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xmin</span><span class="o">+</span><span class="n">xmax</span><span class="o">*</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">ymax</span><span class="o">*</span><span class="mf">0.9</span><span class="p">,</span> <span class="s1">'Var='</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="mi">8888888888</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">'#FFFFFF'</span><span class="p">)</span>
+    <span class="n">ann_text</span><span class="o">.</span><span class="n">set_backgroundcolor</span><span class="p">(</span><span class="s1">'#FFFFFF'</span><span class="p">)</span>
+    <span class="n">ann_text</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">get_renderer</span><span class="p">())</span>
+    
+    <span class="c1">#ann_text.visible(False)</span>
+    <span class="n">x_point</span><span class="p">,</span><span class="n">y_point</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">ydata</span>
+    <span class="n">value_of_interest</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">y_point</span><span class="p">)</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">event</span><span class="o">.</span><span class="n">ydata</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ann_text</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xmin</span><span class="o">+</span><span class="n">xmax</span><span class="o">*</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">ymax</span><span class="o">*</span><span class="mf">0.9</span><span class="p">,</span> <span class="s1">'Var='</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">value_of_interest</span><span class="p">),</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#B74500'</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bar</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bars</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value_of_interest</span> <span class="o">&gt;=</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#699AE1'</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&lt;</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'#CC0014'</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&lt;</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+            <span class="n">digitized</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">value_of_interest</span><span class="p">,</span><span class="n">bins</span><span class="p">)</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="n">color_scale_white_red</span><span class="p">[</span><span class="n">digitized</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">value_of_interest</span> <span class="o">&gt;=</span> <span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">annual_means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">bar_confdistance_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+            <span class="n">digitized</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">value_of_interest</span><span class="p">,</span><span class="n">bins</span><span class="p">)</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="n">color_scale_white_blue</span><span class="p">[</span><span class="n">digitized</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="c1"># tell mpl_connect we want to pass a 'button_press_event' into onclick when the event is detected</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">mpl_connect</span><span class="p">(</span><span class="s1">'button_press_event'</span><span class="p">,</span> <span class="n">onclick</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[16]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>7</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+  </div>
+  
+
+  <div class="comments">
+	<h2>Comments</h2>
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+				   (function() {
+						var dsq = document.createElement('script');
+						dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//silversurfer0pelican.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] ||
+						 document.getElementsByTagName('body')[0]).appendChild(dsq);
+				  })();
+	</script>
+  </div>
+</article>
+        </div><!-- /content -->
+
+    </div><!--/.container /#main-container -->
+
+    <footer id="site-footer">
+ 
+      <address id="site-colophon">
+        <p class="text-center text-muted">
+        Site built using <a href="http://getpelican.com/" target="_blank">Pelican</a>
+        &nbsp;&bull;&nbsp; Theme based on
+        <a href="http://www.voidynullness.net/page/voidy-bootstrap-pelican-theme/"
+           target="_blank">VoidyBootstrap</a> by 
+        <a href="http://www.robertiwancz.com/"
+           target="_blank">RKI</a>  
+        </p>
+      </address><!-- /colophon  -->
+    </footer>
+
+<!-- DISQUS script for displaying comment count -->
+<script type="text/javascript">
+    var disqus_shortname = 'silversurfer0pelican';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+    <!-- javascript -->
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
