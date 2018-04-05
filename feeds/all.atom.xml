@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>A jupyter Blog</title><link href="http://SilverSurfer0.github.io/" rel="alternate"></link><link href="http://SilverSurfer0.github.io/feeds/all.atom.xml" rel="self"></link><id>http://SilverSurfer0.github.io/</id><updated>2018-04-05T18:00:00+03:00</updated><entry><title>Just a post</title><link href="http://SilverSurfer0.github.io/a-post.html" rel="alternate"></link><published>2018-04-05T18:00:00+03:00</published><updated>2018-04-05T18:00:00+03:00</updated><author><name>Vladimir Kuzmenkov</name></author><id>tag:SilverSurfer0.github.io,2018-04-05:a-post.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>A jupyter Blog</title><link href="http://SilverSurfer0.github.io/" rel="alternate"></link><link href="http://SilverSurfer0.github.io/feeds/all.atom.xml" rel="self"></link><id>http://SilverSurfer0.github.io/</id><updated>2018-04-05T18:00:00+03:00</updated><entry><title>Just a post</title><link href="http://SilverSurfer0.github.io/apost.html" rel="alternate"></link><published>2018-04-05T18:00:00+03:00</published><updated>2018-04-05T18:00:00+03:00</updated><author><name>Vladimir Kuzmenkov</name></author><id>tag:SilverSurfer0.github.io,2018-04-05:apost.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -971,6 +971,19 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="A-post-to-see"&gt;A post to see&lt;a class="anchor-link" href="#A-post-to-see"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;hr /&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis urna elit. Vestibulum aliquam in nulla at volutpat. Etiam eu mi quis sapien scelerisque iaculis. Ut rhoncus mollis est. Maecenas semper nibh id velit pretium, quis laoreet neque luctus. Etiam lacinia vulputate velit, eu tristique nulla tempor ut. Praesent luctus lobortis ex at dapibus. Praesent ac velit a magna maximus gravida. Cras et ligula in nisi aliquam ullamcorper. Fusce consequat laoreet purus ut pretium.&lt;/p&gt;
+&lt;p&gt;Sed rutrum turpis ac consectetur hendrerit. Vivamus sodales erat et urna suscipit, non tempor ante aliquet. Etiam sagittis iaculis semper. Pellentesque id cursus mauris. In porttitor, dolor vitae feugiat ultricies, ipsum neque placerat nunc, nec aliquet augue diam eu orci. Maecenas id turpis viverra odio eleifend rhoncus. Mauris ultricies ligula ante. Donec ornare pretium erat at fermentum. Donec porta consequat quam id condimentum. In ac odio pharetra, facilisis nisl accumsan, consequat tellus. Donec quis arcu neque.&lt;/p&gt;
+&lt;p&gt;Vestibulum ut dui aliquam, sodales ante eget, fermentum nibh. Praesent neque mi, efficitur non rhoncus nec, consequat at sapien. Phasellus nec purus finibus, hendrerit justo nec, vehicula arcu. Duis suscipit nibh non risus condimentum, in congue enim fermentum. Fusce eu felis at nulla ornare commodo. Duis ut pretium arcu, a rhoncus lectus. Vivamus ut velit ipsum. In ac malesuada sem. Aliquam aliquam nisi at vehicula vulputate. Nam varius nunc ut risus suscipit porttitor. Phasellus eget ullamcorper magna. Pellentesque mollis diam sit amet pretium facilisis. Nulla consequat in risus vel feugiat.&lt;/p&gt;
+&lt;p&gt;Cras venenatis enim sed turpis aliquet faucibus. Fusce feugiat vulputate lacus in venenatis. Curabitur risus tellus, dignissim eget massa non, vehicula molestie risus. Phasellus ac iaculis purus, pellentesque ornare est. Proin maximus, ipsum ac rutrum porta, tellus leo porttitor ex, at placerat leo massa vel quam. Proin ornare varius tortor, non elementum purus auctor non. Vivamus id urna elit.&lt;/p&gt;
+&lt;p&gt;Pellentesque ultrices diam in tortor hendrerit lobortis. Aliquam elit lacus, sollicitudin quis luctus ac, dignissim ac nibh. In lacinia blandit risus, a volutpat lectus bibendum in. Nunc sed blandit nisi, eget maximus quam. In risus lorem, tempor eget erat at, pharetra ullamcorper lorem. Pellentesque vel ornare lectus, a malesuada nisl. Pellentesque vitae volutpat erat, vel semper tortor. Curabitur quis aliquet lectus.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
@@ -1000,7 +1013,7 @@ h6:hover .anchor-link {
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="notes"></category></entry><entry><title>Interactive Linear Plot</title><link href="http://SilverSurfer0.github.io/interactive-linear-plot-migration.html" rel="alternate"></link><published>2017-09-04T22:05:00+03:00</published><updated>2017-09-04T22:05:00+03:00</updated><author><name>Vladimir Kuzmenkov</name></author><id>tag:SilverSurfer0.github.io,2017-09-04:interactive-linear-plot-migration.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+</summary><category term="python matplotlib"></category></entry><entry><title>Interactive Linear Plot</title><link href="http://SilverSurfer0.github.io/interactive-linear-plot-migration.html" rel="alternate"></link><published>2017-09-04T22:05:00+03:00</published><updated>2017-09-04T22:05:00+03:00</updated><author><name>Vladimir Kuzmenkov</name></author><id>tag:SilverSurfer0.github.io,2017-09-04:interactive-linear-plot-migration.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -2841,10 +2854,10 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
 &lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div id="18ed9dc7-004d-445d-b57f-25c09a5c2c19"&gt;&lt;/div&gt;
+&lt;div id="4e77db9f-6f68-4585-8efa-69a5dce5568c"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#18ed9dc7-004d-445d-b57f-25c09a5c2c19');
+var element = $('#4e77db9f-6f68-4585-8efa-69a5dce5568c');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -4790,10 +4803,10 @@ h6:hover .anchor-link {
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
 &lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div id="dc7a032e-641a-4cd0-931f-92f2f1d15c34"&gt;&lt;/div&gt;
+&lt;div id="29ca4b4f-fb77-4a73-a229-19797687bc7d"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#dc7a032e-641a-4cd0-931f-92f2f1d15c34');
+var element = $('#29ca4b4f-fb77-4a73-a229-19797687bc7d');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
