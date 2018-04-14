@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>A jupyter Blog</title><link href="http://SilverSurfer0.github.io/" rel="alternate"></link><link href="http://SilverSurfer0.github.io/feeds/all.atom.xml" rel="self"></link><id>http://SilverSurfer0.github.io/</id><updated>2018-04-05T18:00:00+03:00</updated><entry><title>Just a post</title><link href="http://SilverSurfer0.github.io/apost.html" rel="alternate"></link><published>2018-04-05T18:00:00+03:00</published><updated>2018-04-05T18:00:00+03:00</updated><author><name>Vladimir Kuzmenkov</name></author><id>tag:SilverSurfer0.github.io,2018-04-05:apost.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>A jupyter Blog</title><link href="https://SilverSurfer0.github.io/" rel="alternate"></link><link href="https://SilverSurfer0.github.io/feeds/all.atom.xml" rel="self"></link><id>https://SilverSurfer0.github.io/</id><updated>2018-04-05T18:00:00+03:00</updated><entry><title>Just a post</title><link href="https://SilverSurfer0.github.io/apost.html" rel="alternate"></link><published>2018-04-05T18:00:00+03:00</published><updated>2018-04-05T18:00:00+03:00</updated><author><name>Vladimir Kuzmenkov</name></author><id>tag:SilverSurfer0.github.io,2018-04-05:apost.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -1013,7 +1013,7 @@ h6:hover .anchor-link {
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="python matplotlib"></category></entry><entry><title>Interactive Linear Plot</title><link href="http://SilverSurfer0.github.io/interactive-linear-plot-migration.html" rel="alternate"></link><published>2017-09-04T22:05:00+03:00</published><updated>2017-09-04T22:05:00+03:00</updated><author><name>Vladimir Kuzmenkov</name></author><id>tag:SilverSurfer0.github.io,2017-09-04:interactive-linear-plot-migration.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+</summary><category term="python matplotlib"></category></entry><entry><title>Interactive Linear Plot</title><link href="https://SilverSurfer0.github.io/interactive-linear-plot-migration.html" rel="alternate"></link><published>2017-09-04T22:05:00+03:00</published><updated>2017-09-04T22:05:00+03:00</updated><author><name>Vladimir Kuzmenkov</name></author><id>tag:SilverSurfer0.github.io,2017-09-04:interactive-linear-plot-migration.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -2854,10 +2854,10 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
 &lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div id="474dadb0-1368-45bb-91b1-112612d5e892"&gt;&lt;/div&gt;
+&lt;div id="7a1555e3-42e2-4686-8c83-ab3558529244"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#474dadb0-1368-45bb-91b1-112612d5e892');
+var element = $('#7a1555e3-42e2-4686-8c83-ab3558529244');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -3677,7 +3677,7 @@ if (IPython.notebook.kernel != null) {
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="python matplotlib"></category></entry><entry><title>Interactive Barchart</title><link href="http://SilverSurfer0.github.io/interactive-barchart.html" rel="alternate"></link><published>2017-09-04T22:00:00+03:00</published><updated>2017-09-04T22:00:00+03:00</updated><author><name>Vladimir Kuzmenkov</name></author><id>tag:SilverSurfer0.github.io,2017-09-04:interactive-barchart.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+</summary><category term="python matplotlib"></category></entry><entry><title>Interactive Barchart</title><link href="https://SilverSurfer0.github.io/interactive-barchart.html" rel="alternate"></link><published>2017-09-04T22:00:00+03:00</published><updated>2017-09-04T22:00:00+03:00</updated><author><name>Vladimir Kuzmenkov</name></author><id>tag:SilverSurfer0.github.io,2017-09-04:interactive-barchart.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -4803,10 +4803,10 @@ h6:hover .anchor-link {
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
 &lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div id="b7de0da6-f06a-47d1-a3e2-bc7ec7b9cd89"&gt;&lt;/div&gt;
+&lt;div id="705149a4-8e1d-468c-97ac-5de64a71b3e6"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#b7de0da6-f06a-47d1-a3e2-bc7ec7b9cd89');
+var element = $('#705149a4-8e1d-468c-97ac-5de64a71b3e6');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
